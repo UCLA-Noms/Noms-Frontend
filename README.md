@@ -25,5 +25,5 @@ Boilerplate from: https://expo.io/@wataru/react-native-boilerplate
 - [pre commit](https://github.com/observing/pre-commit)
 
 ## Setup
-- `yarn`
-- `yarn ios` or `yarn android`
+- `yarn install`
+- `yarn start`
