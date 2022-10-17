@@ -14,7 +14,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: 'module',
   },
   plugins: ['react'],
@@ -27,8 +27,9 @@ module.exports = {
     'global-require': 'off',
     'no-console': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
     'import/no-extraneous-dependencies': [
       'error',
       {
