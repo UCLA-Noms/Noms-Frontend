@@ -18,6 +18,7 @@ jobs:
         with:
           expo-version: 5.x
           token: ${{ secrets.EXPO_TOKEN }}
+      - run: yarn test
       - run: yarn policies set-version 1.22.17
       - run: yarn install --frozen-lockfile
       - run: expo publish --non-interactive

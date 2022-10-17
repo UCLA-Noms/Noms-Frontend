@@ -8,7 +8,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "node_modules/.bin/eslint src/ --fix src/ --fix",
-    "test": "node_modules/.bin/jest --passWithNoTests"
+    "test": "node_modules/.bin/jest"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -44,8 +44,10 @@
   },
   "devDependencies": {
     "@types/expo": "^33.0.1",
+    "@types/jest": "^29.1.2",
     "@types/react": "17.0.21",
     "@types/react-native": "^0.70.4",
+    "@types/react-test-renderer": "^18.0.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-expo": "9.0.1",
@@ -63,7 +65,7 @@
     "lint-staged": "^10.2.0",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "react-test-renderer": "^16.13.1",
+    "react-test-renderer": "17",
     "typescript": "~4.3.5"
   },
   "prettier": {
@@ -80,8 +82,29 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "moduleNameMapper": { 
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js", 
+      "\\.(css|less)$": "<rootDir>/assetsTransformer.js" 
+    },
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+      "<rootDir>/node_modules/(react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|react-native-code-push)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/babel.config.js",
+      "!**/jest.setup.js",
+      "!metro.config.js",
+      "!assetsTransformer.js",
+      "!.eslintrc.js"
     ]
   },
   "lint-staged": {
