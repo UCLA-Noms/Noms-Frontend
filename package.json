@@ -8,7 +8,12 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "node_modules/.bin/eslint src/ --fix src/ --fix",
-    "test": "node_modules/.bin/jest"
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test:verbose": "jest --passWithNoTests --runInBand --watch",
+    "test:unit": "yarn test --watch -c ./jest-unit.config.js",
+    "test:integration": "yarn test --watch -c ./jest-integration.config.js",
+    "test:staged": "yarn test --findRelatedTests",
+    "test:ci": "yarn test --coverage"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",

@@ -1,4 +1,4 @@
-name: Expo CI
+name: CI
 
 on:
   push:
@@ -18,7 +18,10 @@ jobs:
         with:
           expo-version: 5.x
           token: ${{ secrets.EXPO_TOKEN }}
-      - run: yarn test
+      - name: Install Dependencies
+        run: yarn
+      - name: Test
+        run: yarn test:ci --verbose
       - run: yarn policies set-version 1.22.17
       - run: yarn install --frozen-lockfile
       - run: expo publish --non-interactive
