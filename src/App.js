@@ -9,7 +9,7 @@ import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
 import Navigator from './navigator'
 
-function App() {
+const App = () => {
   const [didLoad, setDidLoad] = useState(false)
   // assets preloading
   const handleLoadAssets = async () => {
