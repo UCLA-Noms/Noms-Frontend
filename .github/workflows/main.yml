@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy
-        run: ./scripts/amplify-deploy.sh noms master
+        run: ./scripts/amplify-deploy.sh ${{secrets.AWS_APP_ID}} master
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
