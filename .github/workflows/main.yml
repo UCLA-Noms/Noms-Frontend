@@ -5,6 +5,12 @@ on:
     branches:
       - main
 jobs:
+  backend:
+    phases:
+      build:
+        commands:
+          - '# Execute Amplify CLI with the helper script'
+          - amplifyPush --simple
   publish:
     name: Install and publish
     runs-on: ubuntu-latest
