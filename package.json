@@ -24,8 +24,6 @@
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "@reduxjs/toolkit": "^1.5.1",
-    "aws-amplify": "^4.3.43",
-    "aws-amplify-react-native": "^6.0.8",
     "axios": "^0.24.0",
     "expo": "^44.0.0",
     "expo-asset": "~8.4.5",
@@ -91,7 +89,9 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFiles": ["<rootDir>/jestSetupFile.js"],
+    "setupFiles": [
+      "<rootDir>/jestSetupFile.js"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js",
       "\\.(css|less)$": "<rootDir>/assetsTransformer.js"

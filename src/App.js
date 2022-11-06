@@ -7,15 +7,9 @@ import 'utils/ignore'
 // assets
 import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
-import { Amplify } from 'aws-amplify'
 import Navigator from './navigator'
 
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import awsconfig from './aws-exports'
-
-Amplify.configure(awsconfig)
-
-const App = () => {
+function App() {
   const [didLoad, setDidLoad] = useState(false)
   // assets preloading
   const handleLoadAssets = async () => {

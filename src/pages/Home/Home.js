@@ -5,7 +5,6 @@ import {
 } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
-import axios from 'axios'
 
 const styles = StyleSheet.create({
   root: {
@@ -30,17 +29,6 @@ const Home = ({ navigation }) => (
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        axios
-          .get(
-            'https://k8r6pxo5k2.execute-api.us-west-1.amazonaws.com/dev/items',
-          )
-          .then((response) => {
-            console.log(response.data.success)
-          })
-          .catch((error) => {
-            console.log(error)
-          })
-
         navigation.navigate('Details', { from: 'Home' })
       }}
     />
