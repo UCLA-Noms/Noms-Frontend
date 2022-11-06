@@ -1,0 +1,28 @@
+{
+  "api": {
+    "nomsItemsLambda": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "nomsfrontendcf5ca4de",
+          "attributes": ["Name", "Arn"]
+        }
+      ]
+    }
+  },
+  "function": {
+    "nomsItemsLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "nomsfrontendcf5ca4de": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    }
+  }
+}
