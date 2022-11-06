@@ -10,7 +10,7 @@ import { fontAssets } from 'theme/fonts'
 import { Amplify } from 'aws-amplify'
 import Navigator from './navigator'
 
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, import/extensions
 import awsconfig from './aws-exports'
 
 Amplify.configure(awsconfig)
