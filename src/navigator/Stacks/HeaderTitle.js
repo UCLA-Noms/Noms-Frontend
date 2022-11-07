@@ -1,6 +1,6 @@
-import React from 'react'
-import { StyleSheet, Image } from 'react-native'
-import { images } from 'theme'
+import React from "react"
+import { StyleSheet, Image } from "react-native"
+import { images } from "theme"
 
 const styles = StyleSheet.create({
   logo: {
