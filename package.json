@@ -16,6 +16,9 @@
     "test:ci": "yarn test --coverage"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@mantine/core": "^5.7.1",
+    "@mantine/hooks": "^5.7.1",
     "@react-native-async-storage/async-storage": "~1.15.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/netinfo": "7.1.3",
