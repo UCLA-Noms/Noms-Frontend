@@ -6,6 +6,7 @@ import Profile from 'pages/Profile'
 import Details from 'pages/Details'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import DietaryRestrictions from '../../pages/Dietary Restrictions'
 
 // ------------------------------------
 // Constants
@@ -31,7 +32,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={Home}
+      component={DietaryRestrictions}
       options={({ navigation }) => ({
         title: 'Home',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
