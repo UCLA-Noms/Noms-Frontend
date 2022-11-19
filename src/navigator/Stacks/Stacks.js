@@ -74,3 +74,28 @@ export const ProfileNavigator = () => (
     />
   </Stack.Navigator>
 )
+
+export const OrderNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Order"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Order"
+      component={Profile}
+      options={({ navigation }) => ({
+        title: "Order",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    <Stack.Screen
+      name="Details"
+      component={Details}
+      options={{
+        title: "Details",
+      }}
+    />
+  </Stack.Navigator>
+)

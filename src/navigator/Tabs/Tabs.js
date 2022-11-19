@@ -5,7 +5,7 @@ import FontIcon from "react-native-vector-icons/FontAwesome5"
 import { colors } from "theme"
 
 // stack navigators
-import { HomeNavigator, ProfileNavigator } from "../Stacks"
+import { HomeNavigator, ProfileNavigator, OrderNavigator } from "../Stacks"
 
 const Tab = createBottomTabNavigator()
 
@@ -33,6 +33,15 @@ const TabNavigator = () => (
                 solid
               />
             )
+          case "Your order":
+            return (
+              <FontIcon
+                name="order"
+                color={focused ? colors.lightPurple : colors.gray}
+                size={20}
+                solid
+              />
+            )
           default:
             return <View />
         }
@@ -54,6 +63,7 @@ const TabNavigator = () => (
   >
     <Tab.Screen name="Home" component={HomeNavigator} />
     <Tab.Screen name="Profile" component={ProfileNavigator} />
+    <Tab.Screen name="Order" component={OrderNavigator} />
   </Tab.Navigator>
 )
 
