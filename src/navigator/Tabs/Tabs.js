@@ -5,7 +5,7 @@ import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import { colors } from 'theme'
 
 // stack navigators
-import { HomeNavigator, ProfileNavigator, OrderNavigator } from '../Stacks'
+import { DiscoverNavigator, OrderNavigator, MeNavigator } from '../Stacks'
 
 const Tab = createBottomTabNavigator()
 
@@ -15,28 +15,28 @@ const TabNavigator = () => (
       // eslint-disable-next-line react/prop-types
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
-          case 'Home':
+          case 'Discover':
             return (
               <FontIcon
-                name="home"
+                name="discover"
                 color={focused ? colors.lightPurple : colors.gray}
                 size={20}
                 solid
               />
             )
-          case 'Profile':
-            return (
-              <FontIcon
-                name="user"
-                color={focused ? colors.lightPurple : colors.gray}
-                size={20}
-                solid
-              />
-            )
-          case 'Your order':
+          case 'Order':
             return (
               <FontIcon
                 name="order"
+                color={focused ? colors.lightPurple : colors.gray}
+                size={20}
+                solid
+              />
+            )
+          case 'Me':
+            return (
+              <FontIcon
+                name="me"
                 color={focused ? colors.lightPurple : colors.gray}
                 size={20}
                 solid
@@ -61,9 +61,9 @@ const TabNavigator = () => (
     initialRouteName="Home"
     swipeEnabled={false}
   >
-    <Tab.Screen name="Home" component={HomeNavigator} />
-    <Tab.Screen name="Profile" component={ProfileNavigator} />
+    <Tab.Screen name="Discover" component={DiscoverNavigator} />
     <Tab.Screen name="Order" component={OrderNavigator} />
+    <Tab.Screen name="Me" component={MeNavigator} />
   </Tab.Navigator>
 )
 
