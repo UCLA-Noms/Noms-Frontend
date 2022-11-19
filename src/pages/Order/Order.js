@@ -20,29 +20,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Home = ({ navigation }) => (
+const Order = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Home</Text>
+    <Text style={styles.title}>Order</Text>
     <Button
       title="Go to Details"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate("Details", { from: "Home" })
+        navigation.navigate("Details", { from: "Order" })
       }}
     />
   </View>
 )
 
-Home.propTypes = {
+Order.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Home.defaultProps = {
+Order.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Home
+export default Order
