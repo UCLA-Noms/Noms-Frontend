@@ -1,7 +1,9 @@
 node_modules/**/*
 .expo/*
 npm-debug.*
+*.env
 *.jks
+*.log
 *.p8
 *.p12
 *.key
