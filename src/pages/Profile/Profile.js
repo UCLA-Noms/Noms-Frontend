@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { StyleSheet, Text, View, StatusBar, Image } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
-import { AuthContext } from '../../App.js'
+import { AuthContext } from '../../navigator/Navigator'
 
 const styles = StyleSheet.create({
   root: {
