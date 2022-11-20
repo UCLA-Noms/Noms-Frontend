@@ -1,12 +1,16 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 import { colors } from "theme"
-import Discover from "pages/Discover"
+import Home from "pages/Home"
 import Details from "pages/Details"
 import Order from "pages/Order"
 import Me from "pages/Me"
 import HeaderLeft from "./HeaderLeft"
 import HeaderTitle from "./HeaderTitle"
+import Logo from "../../pages/Logo"
+import Login from "../../pages/Login"
+import PFPSelector from "../../pages/PFPSelector"
+import Fun from "../../pages/Fun"
 
 // ------------------------------------
 // Constants
@@ -18,23 +22,53 @@ const navigationProps = {
   headerTintColor: "white",
   headerStyle: { backgroundColor: colors.darkPurple },
   headerTitleStyle: { fontSize: 18 },
+  headerShown: false, // TODO: Remove header
 }
 
 // ------------------------------------
 // Navigators
 // ------------------------------------
 
-export const DiscoverNavigator = () => (
+export const ProfileSetupNavigator = () => (
+  <Stack.Navigator initialRouteName="Logo">
+    <Stack.Screen
+      name="Logo"
+      component={Logo}
+      options={() => ({
+        title: "Logo",
+        headerShown: false,
+      })}
+    />
+    <Stack.Screen
+      name="Login"
+      component={Login}
+      options={() => ({
+        title: "Login",
+        headerShown: false,
+      })}
+    />
+    <Stack.Screen
+      name="PFPSelector"
+      component={PFPSelector}
+      options={() => ({
+        title: "PFPSelector",
+        headerShown: false,
+      })}
+    />
+  </Stack.Navigator>
+)
+
+export const HomeNavigator = () => (
   <Stack.Navigator
-    initialRouteName="Discover"
+    initialRouteName="Home"
     headerMode="screen"
     screenOptions={navigationProps}
   >
     <Stack.Screen
-      name="Discover"
-      component={Discover}
+      name="Home"
+      component={Home}
       options={({ navigation }) => ({
-        title: "Discover",
+        title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -60,6 +94,31 @@ export const OrderNavigator = () => (
       component={Order}
       options={({ navigation }) => ({
         title: "Order",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    <Stack.Screen
+      name="Details"
+      component={Details}
+      options={{
+        title: "Details",
+      }}
+    />
+  </Stack.Navigator>
+)
+
+export const FunNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Fun"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Fun"
+      component={Fun}
+      options={({ navigation }) => ({
+        title: "Fun",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}

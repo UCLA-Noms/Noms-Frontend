@@ -20,29 +20,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Discover = ({ navigation }) => (
+const Fun = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Discover</Text>
+    <Text style={styles.title}>Fun</Text>
     <Button
       title="Go to Details"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate("Details", { from: "Discover" })
+        navigation.navigate("Details", { from: "Fun" })
       }}
     />
   </View>
 )
 
-Discover.propTypes = {
+Fun.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Discover.defaultProps = {
+Fun.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Discover
+export default Fun
