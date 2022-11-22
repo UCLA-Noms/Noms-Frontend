@@ -24,6 +24,7 @@ const Profile = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
     <Text style={styles.title}>Profile</Text>
+    <Text>Name:</Text>
     <Button
       title="Go to Details"
       color="white"
