@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
-import { StyleSheet, Text, View, StatusBar, Image } from "react-native"
+import {
+  StyleSheet, Text, View, StatusBar, Image,
+} from "react-native"
 import Button from "components/Button"
 import { colors } from "theme"
 import { AuthContext } from "../../navigator/Navigator"
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
 })
 
 function Me({ navigation }) {
-  const auth = React.useContext(AuthContext)
+  const auth = useContext(AuthContext)
   const login = () => {
     auth.login()
   }
@@ -55,8 +57,8 @@ function Me({ navigation }) {
         onPress={
           !auth.loggedIn
             ? () => {
-                login({ useProxy: true })
-              }
+              login({ useProxy: true })
+            }
             : logout
         }
       />

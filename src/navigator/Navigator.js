@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { NavigationContainer } from "@react-navigation/native"
 import { Text } from "react-native"
 import { useSelector, useDispatch } from "react-redux"
@@ -8,12 +8,14 @@ import * as Google from "expo-auth-session/providers/google"
 import * as WebBrowser from "expo-web-browser"
 import { revokeAsync } from "expo-auth-session"
 import { REACT_APP_EXPOCLIENTID } from "@env"
+import * as SecureStore from "expo-secure-store"
 import DrawerNavigator from "./Drawer"
+
 
 WebBrowser.maybeCompleteAuthSession()
 
 const Navigator = () => {
-  const { checked, loggedIn } = useSelector((state) => state.app)
+  const { checked, loggedIn } = useSelector(state => state.app)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -44,8 +46,8 @@ const Navigator = () => {
     const info = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
       headers: { Authorization: `Bearer ${accessToken}` },
     })
-    info.json().then((info) => {
-      setUserInfo(info)
+    info.json().then((userData) => {
+      setUserInfo(userData)
     })
   }
 
@@ -56,7 +58,7 @@ const Navigator = () => {
   //   }
   // }
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log("test")
     if (response?.type === "success") {
       setAccessToken(response.authentication.accessToken)
@@ -67,7 +69,7 @@ const Navigator = () => {
     }
   }, [response])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (accessToken) {
       getUserInfo(accessToken)
     }
