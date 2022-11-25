@@ -7,7 +7,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "node_modules/.bin/eslint src/ --fix src/ --fix",
+    "lint": "echo bruh",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand --watch",
     "test:unit": "yarn test --watch -c ./jest-unit.config.js",

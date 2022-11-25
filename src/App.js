@@ -21,6 +21,8 @@ const App = () => {
     handleLoadAssets()
   }, [])
 
+  // authentication
+
   return didLoad ? (
     <Provider store={store}>
       <Navigator />
