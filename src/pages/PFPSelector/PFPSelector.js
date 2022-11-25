@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 import { colors } from "theme"
 
 const styles = StyleSheet.create({
@@ -20,8 +18,11 @@ const styles = StyleSheet.create({
 })
 
 const PFPSelector = ({ navigation }) => (
-  <View style={styles.root} onTouchStart={() => navigation.navigate("Home")}>
-    <StatusBar barStyle="light-content" />
+  <View
+    style={styles.root}
+    onTouchStart={() => navigation.navigate("Home")}
+    onClick={() => navigation.navigate("Home")}
+  >
     <Text style={styles.title}>PFPSelector</Text>
   </View>
 )

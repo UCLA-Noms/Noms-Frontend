@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, View, StatusBar, Image,
-} from "react-native"
+import { StyleSheet, View, Image } from "react-native"
 import { colors, images } from "theme"
 
 const styles = StyleSheet.create({
@@ -17,12 +15,20 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+  image: {
+    width: 200,
+    height: 200,
+  },
 })
 
 const Logo = ({ navigation }) => (
-  <View style={styles.root} onTouchStart={() => navigation.navigate("Login")}>
-    <StatusBar barStyle="light-content" />
-    <Image source={images.logo_lg} style={styles.logo} />
+  // Hacky solution is to apply both an onClick and onTouchStart, but this is not ideal
+  <View
+    style={styles.root}
+    onClick={() => navigation.navigate("Login")}
+    onTouchStart={() => navigation.navigate("Login")}
+  >
+    <Image style={styles.image} source={images.logo_lg} />
   </View>
 )
 

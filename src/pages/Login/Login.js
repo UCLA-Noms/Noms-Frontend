@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
+import { StyleSheet, Text, View } from "react-native"
 import { colors } from "theme"
 
 const styles = StyleSheet.create({
@@ -22,9 +20,9 @@ const styles = StyleSheet.create({
 const Login = ({ navigation }) => (
   <View
     style={styles.root}
+    onClick={() => navigation.navigate("PFPSelector")}
     onTouchStart={() => navigation.navigate("PFPSelector")}
   >
-    <StatusBar barStyle="light-content" />
     <Text style={styles.title}>Login</Text>
   </View>
 )
