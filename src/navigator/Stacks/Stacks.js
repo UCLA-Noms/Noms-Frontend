@@ -1,11 +1,11 @@
-import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
-import { colors } from 'theme'
-import Home from 'pages/Home'
-import Profile from 'pages/Profile'
-import Details from 'pages/Details'
-import HeaderLeft from './HeaderLeft'
-import HeaderTitle from './HeaderTitle'
+import React from "react"
+import { createStackNavigator } from "@react-navigation/stack"
+import { colors } from "theme"
+import Home from "pages/Home"
+import Profile from "pages/Profile"
+import Details from "pages/Details"
+import HeaderLeft from "./HeaderLeft"
+import HeaderTitle from "./HeaderTitle"
 
 // ------------------------------------
 // Constants
@@ -14,7 +14,7 @@ import HeaderTitle from './HeaderTitle'
 const Stack = createStackNavigator()
 
 const navigationProps = {
-  headerTintColor: 'white',
+  headerTintColor: "white",
   headerStyle: { backgroundColor: colors.darkPurple },
   headerTitleStyle: { fontSize: 18 },
 }
@@ -33,7 +33,7 @@ export const HomeNavigator = () => (
       name="Home"
       component={Home}
       options={({ navigation }) => ({
-        title: 'Home',
+        title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -42,7 +42,7 @@ export const HomeNavigator = () => (
       name="Details"
       component={Details}
       options={({ navigation }) => ({
-        title: 'Home',
+        title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -60,7 +60,7 @@ export const ProfileNavigator = () => (
       name="Profile"
       component={Profile}
       options={({ navigation }) => ({
-        title: 'Profile',
+        title: "Profile",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -69,7 +69,7 @@ export const ProfileNavigator = () => (
       name="Details"
       component={Details}
       options={{
-        title: 'Details',
+        title: "Details",
       }}
     />
   </Stack.Navigator>

@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { TouchableOpacity, Text } from 'react-native'
+import React from "react"
+import PropTypes from "prop-types"
+import { TouchableOpacity, Text } from "react-native"
 
 const styles = {
   root: {
@@ -9,7 +9,7 @@ const styles = {
     borderRadius: 5,
   },
   text: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 16,
   },
 }
@@ -49,10 +49,10 @@ Button.propTypes = {
 
 Button.defaultProps = {
   title: null,
-  width: 'auto',
-  height: 'auto',
-  color: 'black',
-  backgroundColor: '#cacaca',
+  width: "auto",
+  height: "auto",
+  color: "black",
+  backgroundColor: "#cacaca",
   onPress: () => {},
   children: null,
   textStyle: {},

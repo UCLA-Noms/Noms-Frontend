@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit"
 
 // ------------------------------------
 // Constants
@@ -16,7 +16,7 @@ const initialState = {
 // ------------------------------------
 
 const appSlice = createSlice({
-  name: 'app',
+  name: "app",
   initialState,
   reducers: {
     authenticate: (state, { payload }) => {

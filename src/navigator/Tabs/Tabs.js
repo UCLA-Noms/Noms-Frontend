@@ -1,11 +1,11 @@
-import React from 'react'
-import { View } from 'react-native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import FontIcon from 'react-native-vector-icons/FontAwesome5'
-import { colors } from 'theme'
+import React from "react"
+import { View } from "react-native"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import FontIcon from "react-native-vector-icons/FontAwesome5"
+import { colors } from "theme"
 
 // stack navigators
-import { HomeNavigator, ProfileNavigator } from '../Stacks'
+import { HomeNavigator, ProfileNavigator } from "../Stacks"
 
 const Tab = createBottomTabNavigator()
 
@@ -15,7 +15,7 @@ const TabNavigator = () => (
       // eslint-disable-next-line react/prop-types
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
-          case 'Home':
+          case "Home":
             return (
               <FontIcon
                 name="home"
@@ -24,7 +24,7 @@ const TabNavigator = () => (
                 solid
               />
             )
-          case 'Profile':
+          case "Profile":
             return (
               <FontIcon
                 name="user"
