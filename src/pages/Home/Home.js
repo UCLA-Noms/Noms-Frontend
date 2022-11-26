@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StyleSheet, View, StatusBar } from "react-native"
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native"
 import RestaurantCard from "components/Restaurant Card"
 import { ScrollView } from "react-native-gesture-handler"
 
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 })
 
 const Home = () => (
-  <View style={styles.root}>
+  <SafeAreaView style={styles.root}>
     <StatusBar barStyle="light-content" />
     <ScrollView style={{ width: "100%" }}>
       <RestaurantCard
@@ -55,7 +55,7 @@ const Home = () => (
         liked={false}
       />
     </ScrollView>
-  </View>
+  </SafeAreaView>
 )
 
 Home.propTypes = {

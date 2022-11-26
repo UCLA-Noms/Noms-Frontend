@@ -3,8 +3,9 @@ import PropTypes from "prop-types"
 import {
   TouchableOpacity, Text, Image, View,
 } from "react-native"
+import EStyleSheet from "react-native-extended-stylesheet"
 
-const styles = {
+const styles = EStyleSheet.create({
   restaurantName: {
     // textAlign: 'center',
     fontSize: "2rem",
@@ -37,7 +38,7 @@ const styles = {
     borderRadius: "1rem",
     marginBottom: "0.5rem",
   },
-}
+})
 
 const RestaurantCard = ({
   restaurantName,
@@ -63,7 +64,7 @@ const RestaurantCard = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          padding: "0.5rem",
+          padding: 0.5,
           paddingBottom: 0,
           boxSizing: "border-box",
         }}
@@ -94,8 +95,9 @@ const RestaurantCard = ({
                 {"$".repeat(price)}
               </Text>
             )}
+
             <TouchableOpacity>
-              <Text style={{ ...sideInfoStyle, transform: "scale(1.25)" }}>
+              <Text style={{ ...sideInfoStyle, transform: [{ scale: 1.25 }] }}>
                 {!liked ? "🖤" : "💙"}
               </Text>
             </TouchableOpacity>
@@ -120,8 +122,14 @@ RestaurantCard.propTypes = {
   // backgroundColor: PropTypes.string,
   // onPress: PropTypes.func,
   // children: PropTypes.string,
-  textStyle: PropTypes.shape({}),
-  style: PropTypes.shape({}),
+  // textStyle: PropTypes.shape({}),
+  // style: PropTypes.shape({}),
+  restaurantName: PropTypes.string,
+  closingTime: PropTypes.instanceOf(Date),
+  price: PropTypes.number,
+  liked: PropTypes.bool,
+  rating: PropTypes.number,
+  distance: PropTypes.number,
 }
 
 RestaurantCard.defaultProps = {
@@ -132,8 +140,14 @@ RestaurantCard.defaultProps = {
   // backgroundColor: "#cacaca",
   // onPress: () => { },
   // children: null,
-  textStyle: {},
-  style: {},
+  // textStyle: {},
+  // style: {},
+  restaurantName: "",
+  closingTime: new Date(),
+  price: 0,
+  liked: false,
+  rating: 0,
+  distance: 0,
 }
 
 export default RestaurantCard
