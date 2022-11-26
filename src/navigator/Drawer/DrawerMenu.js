@@ -1,26 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { View, SafeAreaView, Text } from 'react-native'
+import React from "react"
+import PropTypes from "prop-types"
+import { View, SafeAreaView, Text } from "react-native"
 
-import { DrawerActions } from '@react-navigation/native'
-import FontIcon from 'react-native-vector-icons/FontAwesome5'
-import { colors } from 'theme'
+import { DrawerActions } from "@react-navigation/native"
+import FontIcon from "react-native-vector-icons/FontAwesome5"
+import { colors } from "theme"
 
 const styles = {
   root: {
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: "column",
     paddingHorizontal: 10,
   },
   head: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   main: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
 }
 

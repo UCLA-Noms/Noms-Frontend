@@ -1,3 +1,3 @@
-import DietaryRestrictions from './DietaryRestrictions'
+import DietaryRestrictions from "./DietaryRestrictions"
 
 export default DietaryRestrictions

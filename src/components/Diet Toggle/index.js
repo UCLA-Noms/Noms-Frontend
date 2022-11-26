@@ -1,3 +1,3 @@
-import DietToggle from './DietToggle'
+import DietToggle from "./DietToggle"
 
 export default DietToggle
