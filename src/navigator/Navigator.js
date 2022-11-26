@@ -7,7 +7,7 @@ import { authenticate } from "slices/app.slice"
 import DrawerNavigator from "./Drawer"
 
 const Navigator = () => {
-  const { checked, loggedIn } = useSelector((state) => state.app)
+  const { checked, loggedIn } = useSelector(state => state.app)
   const dispatch = useDispatch()
 
   useEffect(() => {
