@@ -4,6 +4,7 @@ import {
   StyleSheet, Text, View, StatusBar,
 } from "react-native"
 import Button from "components/Button"
+import RestaurantCard from "components/Restaurant Card"
 import { colors } from "theme"
 
 const styles = StyleSheet.create({
@@ -32,6 +33,7 @@ const Home = ({ navigation }) => (
         navigation.navigate("Details", { from: "Home" })
       }}
     />
+    <RestaurantCard />
   </View>
 )
 
