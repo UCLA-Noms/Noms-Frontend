@@ -20,7 +20,7 @@
     "@mantine/core": "^5.7.1",
     "@mantine/hooks": "^5.7.1",
     "@react-native-async-storage/async-storage": "~1.17.3",
-    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/masked-view": "0.1.11",
     "@react-native-community/netinfo": "9.3.5",
     "@react-navigation/bottom-tabs": "^5.11.2",
     "@react-navigation/drawer": "^5.11.4",
