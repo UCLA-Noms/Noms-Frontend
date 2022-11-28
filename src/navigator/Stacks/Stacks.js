@@ -11,6 +11,7 @@ import Logo from "../../pages/Logo"
 import Login from "../../pages/Login"
 import PFPSelector from "../../pages/PFPSelector"
 import Fun from "../../pages/Fun"
+import Checkout from "../../pages/Checkout"
 
 // ------------------------------------
 // Constants
@@ -99,10 +100,10 @@ export const OrderNavigator = () => (
       })}
     />
     <Stack.Screen
-      name="Details"
-      component={Details}
+      name="Checkout"
+      component={Checkout}
       options={{
-        title: "Details",
+        title: "Checkout",
       }}
     />
   </Stack.Navigator>

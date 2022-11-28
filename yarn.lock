@@ -3651,6 +3651,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@stripe/stripe-react-native@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-react-native/-/stripe-react-native-0.21.0.tgz#413811682047cc724c591c7a40e1fa01a0e0e720"
+  integrity sha512-NI5eUpd/7ZZ/XTr2TUOpPdKuATHqk42uZrl7gCA/NuivaYqkyW6gflgAlNVxshMN6LEdAVmDFbxsIz3N/a56OQ==
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
