@@ -35,3 +35,4 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 
 yarn-error.log
+.env
