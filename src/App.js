@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { View } from 'react-native'
-import { Provider } from 'react-redux'
-import store from 'utils/store'
-import 'utils/ignore'
-import * as SecureStore from 'expo-secure-store'
+import React, { useState, useEffect } from "react"
+import "expo-dev-menu"
+import { View } from "react-native"
+import { Provider } from "react-redux"
+import store from "utils/store"
+import "utils/ignore"
 
 // assets
-import { imageAssets } from 'theme/images'
-import { fontAssets } from 'theme/fonts'
-import Navigator from './navigator'
+import { imageAssets } from "theme/images"
+import { fontAssets } from "theme/fonts"
+import Navigator from "./navigator"
 
 const App = () => {
   const [didLoad, setDidLoad] = useState(false)
