@@ -1,18 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StyleSheet, Text, View, StatusBar } from 'react-native'
-import Button from 'components/Button'
-import RestaurantCard from 'components/Restaurant Card'
-import { colors } from 'theme'
-import { ScrollView } from 'react-native-gesture-handler'
+import React from "react"
+import PropTypes from "prop-types"
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native"
+import RestaurantCard from "components/Restaurant Card"
+import { ScrollView } from "react-native-gesture-handler"
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 24,
@@ -20,10 +18,10 @@ const styles = StyleSheet.create({
   },
 })
 
-const Home = ({ navigation }) => (
-  <View style={styles.root}>
+const Home = () => (
+  <SafeAreaView style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <ScrollView style={{ width: '100%' }}>
+    <ScrollView style={{ width: "100%" }}>
       <RestaurantCard
         restaurantName="Egg Truck"
         closingTime={new Date()}
@@ -57,7 +55,7 @@ const Home = ({ navigation }) => (
         liked={false}
       />
     </ScrollView>
-  </View>
+  </SafeAreaView>
 )
 
 Home.propTypes = {
