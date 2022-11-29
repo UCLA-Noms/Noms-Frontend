@@ -11,6 +11,7 @@ import Login from "../../pages/Login"
 import PFPSelector from "../../pages/PFPSelector"
 import Fun from "../../pages/Fun"
 import DietaryRestrictions from "../../pages/Dietary Restrictions"
+import Restaurant from "../../pages/Restaurant"
 
 // ------------------------------------
 // Constants
@@ -66,7 +67,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={DietaryRestrictions}
+      component={Restaurant} // here is where things are being tested
       options={({ navigation }) => ({
         title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,

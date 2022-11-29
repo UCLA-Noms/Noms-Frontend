@@ -15,6 +15,7 @@ const styles = EStyleSheet.create({
     fontSize: "1rem",
     marginTop: "0.5rem",
     borderRadius: "0.5rem",
+    padding: 5,
   },
   container: {
     backgroundColor: "transparent",
@@ -28,6 +29,7 @@ const styles = EStyleSheet.create({
   toggledOn: {
     backgroundColor: "powderblue",
     outline: "0.5rem solid powderblue",
+    // border: "0.5rem solid powderblue",
   },
 })
 
