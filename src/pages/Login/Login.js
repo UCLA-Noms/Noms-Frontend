@@ -104,19 +104,19 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (userInfo) {
-      navigation.navigate("PFPSelector")
+      navigation.navigate("PFPSelector", { username: userInfo.name }) // temporarily pass username as prop
     }
   }, [userInfo])
 
   return (
     <View style={styles.root}>
       <Image style={styles.image} source={images.logo_login} />
-      {userInfo ? (
+      {/* {userInfo ? (
         <Image
           source={{ uri: userInfo.picture }}
           style={{ width: 50, height: 50 }}
         />
-      ) : null}
+      ) : null} */}
       {/* <Text style={styles.title}>
         {userInfo ? `Logged in as ${userInfo.name}` : "Logged out"}
       </Text> */}

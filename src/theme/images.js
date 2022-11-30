@@ -8,6 +8,12 @@ const images = {
   order: require("../../assets/images/order.png"),
   fun: require("../../assets/images/fun.png"),
   me: require("../../assets/images/me.png"),
+  pfp1: require("../../assets/images/pfp/pfp1.png"),
+  pfp2: require("../../assets/images/pfp/pfp2.png"),
+  pfp3: require("../../assets/images/pfp/pfp3.png"),
+  pfp4: require("../../assets/images/pfp/pfp4.png"),
+  pfp5: require("../../assets/images/pfp/pfp5.png"),
+  pfp6: require("../../assets/images/pfp/pfp6.png"),
 }
 
 // image preloading
