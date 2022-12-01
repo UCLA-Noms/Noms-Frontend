@@ -1,7 +1,6 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 import { colors } from "theme"
-import Home from "pages/Home"
 import Details from "pages/Details"
 import Order from "pages/Order"
 import Me from "pages/Me"
@@ -12,6 +11,7 @@ import Login from "../../pages/Login"
 import PFPSelector from "../../pages/PFPSelector"
 import Fun from "../../pages/Fun"
 import Checkout from "../../pages/Checkout"
+import DietaryRestrictions from "../../pages/Dietary Restrictions"
 
 // ------------------------------------
 // Constants
@@ -67,7 +67,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={Home}
+      component={DietaryRestrictions}
       options={({ navigation }) => ({
         title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,

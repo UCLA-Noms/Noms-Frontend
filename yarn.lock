@@ -13318,6 +13318,11 @@ react-native-dotenv@^3.4.2:
   dependencies:
     dotenv "^16.0.3"
 
+react-native-expo-viewport-units@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-expo-viewport-units/-/react-native-expo-viewport-units-0.0.8.tgz#13d9bcb3e95abcc55f800cfa5f3e4b571860e726"
+  integrity sha512-duAEaoVF41puhXhpI1BuDFc2AMBqfWT2S74EJqaQ5dnuZVhsP++AExJwVo7/2/lHmb6+gYWGyBZOxxPCMWe+Ew==
+
 react-native-extended-stylesheet@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/react-native-extended-stylesheet/-/react-native-extended-stylesheet-0.12.0.tgz#ebacf22d78a8e2173bdef2a08cbf1acba4dc051f"
