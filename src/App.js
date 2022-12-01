@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import "expo-dev-menu"
 import { View } from "react-native"
 import { Provider } from "react-redux"
 import store from "utils/store"
@@ -20,6 +21,8 @@ const App = () => {
   useEffect(() => {
     handleLoadAssets()
   }, [])
+
+  // authentication
 
   return didLoad ? (
     <Provider store={store}>

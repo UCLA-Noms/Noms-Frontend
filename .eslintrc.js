@@ -37,6 +37,14 @@ module.exports = {
         devDependencies: true,
       },
     ],
+    "template-curly-spacing": "off",
+    indent: [
+      "error",
+      2,
+      {
+        ignoredNodes: ["TemplateLiteral"],
+      },
+    ],
   },
   settings: {
     "import/resolver": {
