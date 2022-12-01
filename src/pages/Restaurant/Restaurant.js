@@ -7,6 +7,7 @@ import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"
 import DietToggle from "../../components/Diet Toggle"
 import RestaurantItem from "../../components/RestaurantItem"
+import { images } from "../../theme"
 
 const styles = EStyleSheet.create({
   topImage: {
@@ -95,15 +96,21 @@ const Restaurant = () => (
         <StatusBar barStyle="light-content" />
         <Text style={styles.title}>The Drey</Text>
         <View style={{ ...styles.infoTextContainer }}>
-          <Text>ICON</Text>
+          <Image source={images.bag} style={{ width: 20, height: 20 }}></Image>
           <Text style={styles.text}>Drey Menu Perishable Items</Text>
         </View>
         <View style={{ ...styles.infoTextContainer }}>
-          <Text>ICON</Text>
+          <Image
+            source={images.timer1}
+            style={{ width: 20, height: 20 }}
+          ></Image>
           <Text style={styles.text}>Collection: 8:50 PM - 9:00 PM</Text>
         </View>
         <View style={{ ...styles.infoTextContainer }}>
-          <Text>ICON</Text>
+          <Image
+            source={images.clock}
+            style={{ width: 20, height: 20 }}
+          ></Image>
           <Text style={{ ...styles.text, color: "#04D200" }}>Open now</Text>
         </View>
         <RestaurantItem
