@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { TouchableOpacity, Text, View, Image } from "react-native"
 import Button from "../Button"
+import DietaryRestrictionIcon from "../DietaryRestrictionIcon"
+import { vw } from "react-native-expo-viewport-units"
 
 const styles = {
   root: {
@@ -15,12 +17,19 @@ const styles = {
   },
 }
 
-const RestaurantItem = ({ title, image, price, restrictions, onPress }) => {
+const RestaurantItem = ({
+  title,
+  image,
+  price,
+  restrictions,
+  onPress,
+  imageUrl,
+}) => {
   return (
     <View
       style={{
         width: "100%",
-        paddingHorizontal: "5vw",
+        paddingHorizontal: vw(5),
         // marginBottom: "5vw",
       }}
     >
@@ -29,20 +38,20 @@ const RestaurantItem = ({ title, image, price, restrictions, onPress }) => {
           display: "flex",
           flexDirection: "row",
           backgroundColor: "#F6F6F6",
-          marginBottom: "5vw",
-          padding: "5vw",
+          marginBottom: vw(5),
+          padding: vw(2.5),
           borderRadius: 10,
         }}
       >
         <View>
           <Image
             style={{
-              width: "20vw",
-              height: "20vw",
+              width: vw(25),
+              height: vw(25),
               borderRadius: 20,
             }}
             source={{
-              uri: "https://www.cookwithmanali.com/wp-content/uploads/2021/03/Vegan-Mapo-Tofu-500x500.jpg",
+              uri: imageUrl,
             }}
           ></Image>
         </View>
@@ -51,33 +60,23 @@ const RestaurantItem = ({ title, image, price, restrictions, onPress }) => {
             display: "flex",
             flexDirection: "column",
             flex: 1,
-            paddingLeft: "5vw",
+            paddingLeft: vw(5),
           }}
         >
           <View style={{ flex: 1 }}>
-            <Text style={{ paddingBottom: "2vw", fontSize: "1rem" }}>
+            <Text
+              style={{ paddingBottom: vw(2), fontSize: 15, marginTop: vw(2.5) }}
+            >
               {title}
             </Text>
             <View style={{ display: "flex", flexDirection: "row" }}>
-              {[...Array(restrictions)].map(function (e, i) {
+              {restrictions.map(function (restrictionName, i) {
                 return (
-                  <View
-                    key={i}
-                    style={{
-                      ...{
-                        width: 20,
-                        height: 20,
-                        borderRadius: "100%",
-                        borderWidth: "2px",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginRight: "2vw",
-                      },
-                    }}
-                  >
-                    {i}
-                  </View>
+                  <DietaryRestrictionIcon
+                    restrictionName={restrictionName}
+                    size={20}
+                    style={{ marginRight: 10, backgroundColor: "white" }}
+                  ></DietaryRestrictionIcon>
                 )
               })}
             </View>

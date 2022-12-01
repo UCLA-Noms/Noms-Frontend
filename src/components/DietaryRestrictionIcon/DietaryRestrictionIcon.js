@@ -7,10 +7,10 @@ import dietaryIcons from "../../theme/dietaryIcons"
 
 const styles = EStyleSheet.create({})
 
-const DietaryRestrictionIcon = ({ restrictionName, size }) => {
+const DietaryRestrictionIcon = ({ restrictionName, size, style }) => {
   return (
     <Image
-      style={{ width: size, height: size }}
+      style={{ ...style, width: size, height: size, borderRadius: "100%" }}
       source={dietaryIcons[restrictionName]}
     ></Image>
   )

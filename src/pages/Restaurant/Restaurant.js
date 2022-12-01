@@ -39,6 +39,7 @@ const styles = EStyleSheet.create({
     width: "100%",
     textAlign: "left",
     paddingLeft: "5vw",
+    fontStyle: "italic",
   },
   infoTextContainer: {
     width: "100%",
@@ -81,7 +82,7 @@ const Restaurant = () => (
         <Image
           style={{ ...styles.topImage }}
           source={{
-            uri: "https://www.cookwithmanali.com/wp-content/uploads/2021/03/Vegan-Mapo-Tofu-500x500.jpg",
+            uri: "https://s3-alpha-sig.figma.com/img/323b/b6a5/f9ac0c42b6e48ecccccafff0770b5990?Expires=1670803200&Signature=LliePNfYw3oq-2s~y1OIfbnBgK5-R7Q09LpdRKWBg3mSc-u6a9FgT7L~~~YxAt~CWF-oRJQnfIa6F7sXEUNGfPIMG05QDhUPSlLhz6pr3KOoZr~kkuJk0am4FIg73~TUWQ5ZrESMyjqAsg~BhLA2q7vz4M5hYyrgIOVU2~fBNK5IPzEVi6ESTIlHh1xcM8B7CjcXT39Tn9q29-qG1IKIRvhbIhJvjaLSTbDHmIMOInnpJ0neHF08fJoY-xTuu-uzKA3YXD89soDM9mQy~BUNcc6SIfVB4xznnhciQgJpAXl1OA89GwOOzFt4SoUnWsUCuhh~NKe-ZIwbKDsXkHcxLw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
           }}
         ></Image>
         <View
@@ -103,66 +104,54 @@ const Restaurant = () => (
         </View>
         <View style={{ ...styles.infoTextContainer }}>
           <Text>ICON</Text>
-          <Text style={styles.text}>Open now</Text>
+          <Text style={{ ...styles.text, color: "#04D200" }}>Open now</Text>
         </View>
         <RestaurantItem
           title="Mapo Tofu"
-          restrictions={5}
+          imageUrl={
+            "https://s3-alpha-sig.figma.com/img/9518/2c45/66aeabaa164d9e69cead81c898bb1150?Expires=1670803200&Signature=Pch6TSN52gduaUhv829iXmmCAoBUv9QRVLXsntfij~HCJpAJLtGJ3hYInRSULVZZ~9DRGjnfC96iPsvXj55WBQSzekxyN2N1TcpOX2YLqRyXNZ6VIGXDmFG-MM1QPDuoEMkbg3tO9hU~exX2LT3GDk2Mi24m28zsbZcDa5ZFZlQpVG7uh1OZrrAK4dp0IzxxEG4LW2avIC~vlsx8zZebQw9cZIWmEpJmuquXycpo0Rbd0tb22FsfFP8xDzYMzR~APiu2JCTnf6gYy8UTmIhrg4u0uTszdqsM7Nh99tyd07ARKv9IlFqXgyM-PQw48llnQyjesMemAvRT4keRpMB5lA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          restrictions={["vegan", "treeNuts", "grain"]}
           price={5.99}
         ></RestaurantItem>
         <RestaurantItem
           title="Drey Item"
-          restrictions={2}
+          imageUrl={
+            "https://s3-alpha-sig.figma.com/img/4130/206e/fb50e0385d1c8481155291a2b437e3fc?Expires=1670803200&Signature=BgV5KR3j7cZQaPPKt52yJoEc9anywWoaesttjTbeB8R8wxysiwAmkU5gc2Hl0IsblludHjcn1Gk8IUMyDo7SFa-sCgyRYkUzLDOp5~bbf7v79ziTcE73kUj6OGwb-1vClDITd0IhEjO4HmHZEvkEDfz72JkHYcovbqUgFzicmuAxk-IIBBfmq~zDYN3JmzJ2wM6mwtisI5Qt0JTM1aIqsdUbxvcBVLPjZTe8VS82~lMtyN6tlg2ieerIPdONGcFWetCtyzPxaQqheHdI~6Ozn05iuexAIyQxV6H3uHnfwbVUssNng6IkmCcPBn3OeJZ1s1Ydtbb9uqxLsyXkIxQyAg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          restrictions={["vegan", "halal"]}
           price={6.99}
         ></RestaurantItem>
         <RestaurantItem
           title="Bulgogi Bento"
-          restrictions={3}
+          imageUrl={
+            "https://s3-alpha-sig.figma.com/img/7ce6/9274/0e829e803dd4ab81f87f24b5db024939?Expires=1670803200&Signature=cI7qfaopYQi2qWOiZxB4iswq7x-li5yLOLnU-Owoz9-HzRoSahPD9FdfbVAFou9uX9~TFzb5g9g6TPsQxoM13rhYm2tH3qlgRIl2AUPEJdupA4KvFnnRyHH7qC5Ofrt-wtwBuVh4nlH6L3Bp~F-YmJ54nip98qwIiOQfaS0~N1LcuGPkjyKSizQFvPRet2Q9nX9UffzWr20mukMTqSHfMmQd~Qtjzvzb-3q9qzELD-Fwrpc8lYibaLKW0wXl7qW6Pqmuv25NXfeR0JPUxa7g2gkWSEH0jqzoQFKBAfiKbJw8DEvdhvGauYbOoXmBk1wI31csqeTyQSLeyaQuIxoDJQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          restrictions={["shellfish", "eggs", "soy", "eggs"]}
           price={10.99}
         ></RestaurantItem>
         <RestaurantItem
           title="Mapo Tofu"
-          restrictions={5}
+          imageUrl={
+            "https://s3-alpha-sig.figma.com/img/9518/2c45/66aeabaa164d9e69cead81c898bb1150?Expires=1670803200&Signature=Pch6TSN52gduaUhv829iXmmCAoBUv9QRVLXsntfij~HCJpAJLtGJ3hYInRSULVZZ~9DRGjnfC96iPsvXj55WBQSzekxyN2N1TcpOX2YLqRyXNZ6VIGXDmFG-MM1QPDuoEMkbg3tO9hU~exX2LT3GDk2Mi24m28zsbZcDa5ZFZlQpVG7uh1OZrrAK4dp0IzxxEG4LW2avIC~vlsx8zZebQw9cZIWmEpJmuquXycpo0Rbd0tb22FsfFP8xDzYMzR~APiu2JCTnf6gYy8UTmIhrg4u0uTszdqsM7Nh99tyd07ARKv9IlFqXgyM-PQw48llnQyjesMemAvRT4keRpMB5lA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          restrictions={["vegan", "treeNuts", "grain"]}
           price={5.99}
         ></RestaurantItem>
         <RestaurantItem
           title="Drey Item"
-          restrictions={2}
+          imageUrl={
+            "https://s3-alpha-sig.figma.com/img/4130/206e/fb50e0385d1c8481155291a2b437e3fc?Expires=1670803200&Signature=BgV5KR3j7cZQaPPKt52yJoEc9anywWoaesttjTbeB8R8wxysiwAmkU5gc2Hl0IsblludHjcn1Gk8IUMyDo7SFa-sCgyRYkUzLDOp5~bbf7v79ziTcE73kUj6OGwb-1vClDITd0IhEjO4HmHZEvkEDfz72JkHYcovbqUgFzicmuAxk-IIBBfmq~zDYN3JmzJ2wM6mwtisI5Qt0JTM1aIqsdUbxvcBVLPjZTe8VS82~lMtyN6tlg2ieerIPdONGcFWetCtyzPxaQqheHdI~6Ozn05iuexAIyQxV6H3uHnfwbVUssNng6IkmCcPBn3OeJZ1s1Ydtbb9uqxLsyXkIxQyAg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          restrictions={["vegan", "halal"]}
           price={6.99}
         ></RestaurantItem>
         <RestaurantItem
           title="Bulgogi Bento"
-          restrictions={3}
-          price={10.99}
-        ></RestaurantItem>
-        <RestaurantItem
-          title="Mapo Tofu"
-          restrictions={5}
-          price={5.99}
-        ></RestaurantItem>
-        <RestaurantItem
-          title="Drey Item"
-          restrictions={2}
-          price={6.99}
-        ></RestaurantItem>
-        <RestaurantItem
-          title="Bulgogi Bento"
-          restrictions={3}
-          price={10.99}
-        ></RestaurantItem>
-        <RestaurantItem
-          title="Mapo Tofu"
-          restrictions={5}
-          price={5.99}
-        ></RestaurantItem>
-        <RestaurantItem
-          title="Drey Item"
-          restrictions={2}
-          price={6.99}
-        ></RestaurantItem>
-        <RestaurantItem
-          title="Bulgogi Bento"
-          restrictions={3}
+          imageUrl={
+            "https://s3-alpha-sig.figma.com/img/7ce6/9274/0e829e803dd4ab81f87f24b5db024939?Expires=1670803200&Signature=cI7qfaopYQi2qWOiZxB4iswq7x-li5yLOLnU-Owoz9-HzRoSahPD9FdfbVAFou9uX9~TFzb5g9g6TPsQxoM13rhYm2tH3qlgRIl2AUPEJdupA4KvFnnRyHH7qC5Ofrt-wtwBuVh4nlH6L3Bp~F-YmJ54nip98qwIiOQfaS0~N1LcuGPkjyKSizQFvPRet2Q9nX9UffzWr20mukMTqSHfMmQd~Qtjzvzb-3q9qzELD-Fwrpc8lYibaLKW0wXl7qW6Pqmuv25NXfeR0JPUxa7g2gkWSEH0jqzoQFKBAfiKbJw8DEvdhvGauYbOoXmBk1wI31csqeTyQSLeyaQuIxoDJQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+          }
+          restrictions={["shellfish", "eggs", "soy", "eggs"]}
           price={10.99}
         ></RestaurantItem>
       </View>
