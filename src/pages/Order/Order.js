@@ -1,39 +1,87 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { useSelector, useDispatch } from "react-redux"
+import { Text, View, StyleSheet } from "react-native"
+import CartItem from "components/CartItem"
 import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
+  remove, empty, increment, decrement,
+} from "slices/orders.slice"
 import Button from "components/Button"
+import PropTypes from "prop-types"
 import { colors } from "theme"
 
 const styles = StyleSheet.create({
-  root: {
+  container: {
     flex: 1,
-    flexDirection: "column",
+    backgroundColor: colors.white,
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.lightGrayPurple,
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
+    textAlign: "center",
+    paddingTop: 10,
+    paddingBottom: 10,
+    backgroundColor: colors.lightPurple,
+    width: "100%",
+  },
+  total: {
+    fontSize: 20,
+    marginBottom: 20,
+    textAlign: "center",
+    paddingTop: 10,
+    paddingBottom: 10,
+    width: "100%",
+    fontWeight: "bold",
+  },
+  button: {
+    marginBottom: 10,
   },
 })
 
-const Order = ({ navigation }) => (
-  <View style={styles.root}>
-    <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Order</Text>
-    <Button
-      title="Go to Details"
-      color="white"
-      backgroundColor={colors.lightPurple}
-      onPress={() => {
-        navigation.navigate("Details", { from: "Order" })
-      }}
-    />
-  </View>
-)
+const Order = ({ navigation }) => {
+  const { items, total } = useSelector(state => state.orders.cart)
+  const dispatch = useDispatch()
+
+  const onIncrement = (id) => {
+    dispatch(increment(id))
+  }
+
+  const onDecrement = (id) => {
+    dispatch(decrement(id))
+  }
+
+  const onRemove = (id) => {
+    dispatch(remove(id))
+  }
+
+  const onEmpty = () => {
+    dispatch(empty())
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Order</Text>
+      {items.map(item => (
+        <CartItem
+          item={item}
+          key={item.id}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
+          onRemove={onRemove}
+        />
+      ))}
+      <Text style={styles.total}>Total: ${total}</Text>
+      <View>
+        <Button style={styles.button} title="Empty Cart" onPress={onEmpty} />
+        <Button
+          style={styles.button}
+          title="Checkout"
+          onPress={() => navigation.navigate("Checkout", { from: "Order" })}
+        />
+      </View>
+    </View>
+  )
+}
 
 Order.propTypes = {
   navigation: PropTypes.shape({
