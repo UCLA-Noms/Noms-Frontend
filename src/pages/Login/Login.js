@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import {
-  Image, StyleSheet, Text, View,
-} from "react-native"
-import { colors } from "theme"
+import { Image, StyleSheet, View } from "react-native"
+import { colors, images } from "theme"
 import * as WebBrowser from "expo-web-browser"
 import { useSelector, useDispatch } from "react-redux"
 import { authenticate } from "slices/app.slice"
@@ -27,6 +25,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     marginBottom: 20,
+  },
+  image: {
+    width: 280,
+    height: 70,
+    margin: 50,
   },
 })
 
@@ -101,26 +104,31 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (userInfo) {
-      navigation.navigate("PFPSelector")
+      navigation.navigate("PFPSelector", { username: userInfo.name }) // temporarily pass username as prop
     }
   }, [userInfo])
 
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>Me</Text>
-      {userInfo ? (
+      <Image style={styles.image} source={images.logo_login} />
+      {/* {userInfo ? (
         <Image
           source={{ uri: userInfo.picture }}
           style={{ width: 50, height: 50 }}
         />
-      ) : null}
-      <Text style={styles.title}>
+      ) : null} */}
+      {/* <Text style={styles.title}>
         {userInfo ? `Logged in as ${userInfo.name}` : "Logged out"}
-      </Text>
+      </Text> */}
       <Button
-        title={!accessToken ? "Login" : "Logout"}
-        color="white"
-        backgroundColor={colors.lightPurple}
+        title={!accessToken ? "Log in" : "Logout"}
+        color="black"
+        width={200}
+        height={50}
+        backgroundColor={colors.lightGrayPurple}
+        borderColor="black"
+        borderWidth={1}
+        borderRadius={20}
         onPress={
           !accessToken
             ? () => {
