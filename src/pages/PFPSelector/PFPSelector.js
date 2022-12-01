@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, Image,
-} from "react-native"
-import { images, colors } from "theme"
-import { TouchableOpacity } from "react-native-gesture-handler"
+import { StyleSheet, Text, View } from "react-native"
+import { colors } from "theme"
+import PFP from "../../components/PFP"
 import Button from "../../components/Button"
 
 const styles = StyleSheet.create({
@@ -68,35 +66,7 @@ const HorizontalLine = () => (
   />
 )
 
-const PFP = ({
-  size = 100, image, selected, select,
-}) => (
-  <TouchableOpacity onPress={() => select()}>
-    <View
-      style={[
-        styles.profilecircle,
-        {
-          backgroundColor: selected ? colors.lightBlue : colors.lightGrayPurple,
-        },
-      ]}
-    >
-      <Image
-        style={{ width: size, height: size, borderRadius: size / 2 }}
-        source={image}
-      />
-    </View>
-  </TouchableOpacity>
-)
-
 const PFPSelector = ({ route, navigation }) => {
-  const pfps = [
-    images.pfp1,
-    images.pfp2,
-    images.pfp3,
-    images.pfp4,
-    images.pfp5,
-    images.pfp6,
-  ]
   const [selected, setSelected] = React.useState(null)
   const { username } = route.params
   return (
@@ -145,34 +115,34 @@ const PFPSelector = ({ route, navigation }) => {
         <View style={styles.container}>
           <View style={styles.row}>
             <PFP
-              image={pfps[0]}
+              image={0}
               selected={selected === 0}
               select={() => setSelected(0)}
             />
             <PFP
-              image={pfps[1]}
+              image={1}
               selected={selected === 1}
               select={() => setSelected(1)}
             />
             <PFP
-              image={pfps[2]}
+              image={2}
               selected={selected === 2}
               select={() => setSelected(2)}
             />
           </View>
           <View style={styles.row}>
             <PFP
-              image={pfps[3]}
+              image={3}
               selected={selected === 3}
               select={() => setSelected(3)}
             />
             <PFP
-              image={pfps[4]}
+              image={4}
               selected={selected === 4}
               select={() => setSelected(4)}
             />
             <PFP
-              image={pfps[5]}
+              image={5}
               selected={selected === 5}
               select={() => setSelected(5)}
             />
@@ -197,7 +167,7 @@ const PFPSelector = ({ route, navigation }) => {
           borderWidth={1}
           borderRadius={20}
           onPress={() => {
-            navigation.navigate("Home", { pfp: pfps[selected] }) // temporarily pass profile image by props
+            navigation.navigate("CreateAccount", { pfp: selected }) // temporarily pass profile image by props
           }}
         />
       </View>
@@ -219,18 +189,6 @@ PFPSelector.propTypes = {
 PFPSelector.defaultProps = {
   navigation: { navigate: () => null },
   route: { params: { username: null } },
-}
-
-PFP.propTypes = {
-  size: PropTypes.number,
-  selected: PropTypes.bool,
-  select: PropTypes.func,
-}
-
-PFP.defaultProps = {
-  size: 100,
-  selected: null,
-  select: null,
 }
 
 export default PFPSelector

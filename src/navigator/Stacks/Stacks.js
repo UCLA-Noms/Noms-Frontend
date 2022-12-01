@@ -12,6 +12,8 @@ import PFPSelector from "../../pages/PFPSelector"
 import Fun from "../../pages/Fun"
 import Checkout from "../../pages/Checkout"
 import DietaryRestrictions from "../../pages/Dietary Restrictions"
+import Home from "../../pages/Home"
+import CreateAccount from "../../pages/CreateAccount"
 
 // ------------------------------------
 // Constants
@@ -56,6 +58,22 @@ export const ProfileSetupNavigator = () => (
         headerShown: false,
       })}
     />
+    <Stack.Screen
+      name="DietaryRestriction"
+      component={DietaryRestrictions}
+      options={() => ({
+        title: "Dietary Restriction",
+        headerShown: false,
+      })}
+    />
+    <Stack.Screen
+      name="CreateAccount"
+      component={CreateAccount}
+      options={() => ({
+        title: "Create Account",
+        headerShown: false,
+      })}
+    />
   </Stack.Navigator>
 )
 
@@ -67,7 +85,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={DietaryRestrictions}
+      component={Home}
       options={({ navigation }) => ({
         title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
