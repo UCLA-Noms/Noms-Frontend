@@ -67,7 +67,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={Restaurant} // here is where things are being tested
+      component={DietaryRestrictions} // here is where things are being tested
       options={({ navigation }) => ({
         title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
