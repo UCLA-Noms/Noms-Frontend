@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
-import Button from "components/Button"
-import { colors } from "theme"
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native"
+import RestaurantCard from "components/Restaurant Card"
+import { ScrollView } from "react-native-gesture-handler"
 
 const styles = StyleSheet.create({
   root: {
@@ -12,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.lightGrayPurple,
+    backgroundColor: "white",
   },
   title: {
     fontSize: 24,
@@ -20,19 +18,44 @@ const styles = StyleSheet.create({
   },
 })
 
-const Home = ({ navigation }) => (
-  <View style={styles.root}>
+const Home = () => (
+  <SafeAreaView style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Home</Text>
-    <Button
-      title="Go to Details"
-      color="white"
-      backgroundColor={colors.lightPurple}
-      onPress={() => {
-        navigation.navigate("Details", { from: "Home" })
-      }}
-    />
-  </View>
+    <ScrollView style={{ width: "100%" }}>
+      <RestaurantCard
+        restaurantName="Egg Truck"
+        closingTime={new Date()}
+        rating={2.3}
+        price={4}
+        distance={1.5}
+        liked={false}
+      />
+      <RestaurantCard
+        restaurantName="Egg Truck"
+        closingTime={new Date()}
+        rating={2.3}
+        price={4}
+        distance={1.5}
+        liked={false}
+      />
+      <RestaurantCard
+        restaurantName="Egg Truck"
+        closingTime={new Date()}
+        rating={2.3}
+        price={4}
+        distance={1.5}
+        liked={false}
+      />
+      <RestaurantCard
+        restaurantName="Egg Truck"
+        closingTime={new Date()}
+        rating={2.3}
+        price={4}
+        distance={1.5}
+        liked={false}
+      />
+    </ScrollView>
+  </SafeAreaView>
 )
 
 Home.propTypes = {

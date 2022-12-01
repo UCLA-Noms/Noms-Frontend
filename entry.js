@@ -5,6 +5,7 @@ import { Platform } from "react-native"
 import { registerRootComponent } from "expo"
 import { activateKeepAwake } from "expo-keep-awake"
 import { createRoot } from "react-dom/client"
+import EStyleSheet from "react-native-extended-stylesheet"
 import App from "./App.tsx" /* CHANGE THE PATH BASED ON WHERE YOURS IS LOCATED */
 
 if (process.env.NODE_ENV === "development") {
@@ -19,3 +20,5 @@ if (Platform.OS === "web") {
 } else {
   registerRootComponent(App)
 }
+
+EStyleSheet.build()
