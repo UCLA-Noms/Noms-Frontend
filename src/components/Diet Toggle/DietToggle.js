@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { TouchableOpacity, Text, View } from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"
+import DietaryRestrictionIcon from "../DietaryRestrictionIcon"
 
 const styles = EStyleSheet.create({
   root: {
@@ -12,9 +13,10 @@ const styles = EStyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontSize: "1rem",
-    marginTop: "0.5rem",
+    fontSize: 13,
+    // marginTop: "0.5rem",
     borderRadius: "0.5rem",
+    padding: 5,
   },
   container: {
     backgroundColor: "transparent",
@@ -26,13 +28,18 @@ const styles = EStyleSheet.create({
     alignItems: "center",
   },
   toggledOn: {
-    backgroundColor: "powderblue",
-    outline: "0.5rem solid powderblue",
+    backgroundColor: "#CBE6FF",
+    // outline: "0.5rem solid powderblue",
+    // border: "0.5rem solid powderblue",
+    padding: 10,
+    borderRadius: "100%",
+    // boxSizing: "content-box",
   },
 })
 
 const DietToggle = ({
   title,
+  restrictionName,
   value,
   // handleChange,
   // onPress,
@@ -47,19 +54,14 @@ const DietToggle = ({
       <View style={{ ...styles.container }}>
         <View
           style={{
-            ...{
-              width: vw(10),
-              height: vw(10),
-              borderRadius: "100%",
-              borderWidth: "2px",
-            },
+            padding: 10,
             ...(toggled ? styles.toggledOn : {}),
           }}
-        />
+        >
+          <DietaryRestrictionIcon restrictionName={restrictionName} size={40} />
+        </View>
 
-        <Text style={{ ...styles.text, ...(toggled ? styles.toggledOn : {}) }}>
-          {title}
-        </Text>
+        <Text style={{ ...styles.text }}>{title}</Text>
       </View>
     </TouchableOpacity>
   )

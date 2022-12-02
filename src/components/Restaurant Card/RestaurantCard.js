@@ -4,6 +4,7 @@ import {
   TouchableOpacity, Text, Image, View,
 } from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
+import { images } from "../../theme"
 
 const styles = EStyleSheet.create({
   restaurantName: {
@@ -41,25 +42,28 @@ const styles = EStyleSheet.create({
 })
 
 const RestaurantCard = ({
+  navigation,
   restaurantName,
   closingTime,
   price,
   liked,
   rating,
   distance,
+  image,
 }) => {
   const cardStyle = [styles.card]
   const nameStyle = [styles.restaurantName]
   const infoStyle = [styles.infoStyle]
   const sideInfoStyle = { ...styles.infoStyle, ...styles.bubbleInfo }
   return (
-    <TouchableOpacity style={cardStyle} delayPressIn={250}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: "https://media.istockphoto.com/id/1018141890/photo/two-empty-wine-glasses-sitting-in-a-restaurant-on-a-warm-sunny-afternoon.jpg?s=612x612&w=0&k=20&c=OccJv1oKWSTDqJ6Irw7iW1NEbL0muU2ylqP3EOhOyEg=",
-        }}
-      />
+    <TouchableOpacity
+      style={cardStyle}
+      delayPressIn={250}
+      onPress={() => {
+        navigation.navigate("Restuarant", { from: "Fun" })
+      }}
+    >
+      <Image style={styles.image} source={images[image]} />
       <View
         style={{
           display: "flex",

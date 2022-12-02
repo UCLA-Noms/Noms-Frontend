@@ -6,7 +6,8 @@ import Button from "components/Button"
 import { colors } from "theme"
 import { useSelector } from "react-redux"
 import PropTypes from "prop-types"
-import { CardField, StripeProvider } from "@stripe/stripe-react-native"
+// import { CardField } from "@stripe/stripe-react-native"
+// , StripeProvider } from "@stripe/stripe-react-native"
 
 const styles = StyleSheet.create({
   container: {
@@ -93,63 +94,63 @@ const Checkout = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Checkout</Text>
-      <StripeProvider
+      {/* <StripeProvider
         style={styles.card}
         publishableKey="pk_test_51M3rNtLaqPALNWaMfpTmVupdULjycU7wBCH3lQoD2q2Pn72d7pc4pWpVeVqx7RA29S0InIm2vg9B9LJWe2oY8t7T00qdfkrga4"
         urlScheme="your-url-scheme" // required for 3D Secure and bank redirects
         merchantIdentifier="merchant.com.{{YOUR_APP_NAME}}" // required for Apple Pay
-      >
-        <View>
-          <TextInput
-            placeholder="Name"
-            keyboardType="default"
-            // onChange={(e) => setName(e.nativeEvent.text)}
-            style={styles.input}
-          />
-          <TextInput
-            placeholder="E-mail"
-            keyboardType="email-address"
-            // onChange={(e) => setEmail(e.nativeEvent.text)}
-            style={styles.input}
-          />
-          <TextInput
-            placeholder="Phone"
-            keyboardType="phone-pad"
-            // onChange={(e) => setPhone(e.nativeEvent.text)}
-            style={styles.input}
-          />
-          <CardField
-            postalCodeEnabled
-            placeholder={{
-              number: "1234 1234 1234 1234",
-              postalCode: "123456",
-              cvc: "123",
-              expiration: "12/34",
-            }}
-            /*
-            onCardChange={(cardDetails) => {
-              // Call the callback with the card details
-            }}
-            */
-            cardStyle={styles.card}
-            style={styles.cardContainer}
-          />
-        </View>
-        <Text style={styles.text}>Total: ${total}</Text>
-        <Button
-          variant="primary"
-          style={styles.button}
-          // onPress={handlePayPress}
-          title="Pay"
-          // loading={loading}
+      > */}
+      <View>
+        <TextInput
+          placeholder="Name"
+          keyboardType="default"
+          // onChange={(e) => setName(e.nativeEvent.text)}
+          style={styles.input}
         />
-        <Button
-          variant="secondary"
-          style={styles.button}
-          title="Review Order"
-          onPress={() => navigation.navigate("Order")}
+        <TextInput
+          placeholder="E-mail"
+          keyboardType="email-address"
+          // onChange={(e) => setEmail(e.nativeEvent.text)}
+          style={styles.input}
         />
-      </StripeProvider>
+        <TextInput
+          placeholder="Phone"
+          keyboardType="phone-pad"
+          // onChange={(e) => setPhone(e.nativeEvent.text)}
+          style={styles.input}
+        />
+        {/* <CardField
+          postalCodeEnabled
+          placeholder={{
+            number: "1234 1234 1234 1234",
+            postalCode: "123456",
+            cvc: "123",
+            expiration: "12/34",
+          }}
+
+          onCardChange={(cardDetails) => {
+            // Call the callback with the card details
+          }}
+
+          cardStyle={styles.card}
+          style={styles.cardContainer}
+        /> */}
+      </View>
+      <Text style={styles.text}>Total: ${total}</Text>
+      <Button
+        variant="primary"
+        style={styles.button}
+        // onPress={handlePayPress}
+        title="Pay"
+        // loading={loading}
+      />
+      <Button
+        variant="secondary"
+        style={styles.button}
+        title="Review Order"
+        onPress={() => navigation.navigate("Order")}
+      />
+      {/* </StripeProvider> */}
     </View>
   )
 }

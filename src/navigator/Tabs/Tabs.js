@@ -10,7 +10,7 @@ import {
   MeNavigator,
   ProfileSetupNavigator,
 } from "../Stacks"
-import { FunNavigator } from "../Stacks/Stacks"
+import { FunNavigator, RestuarantNavigator } from "../Stacks/Stacks"
 
 const Tab = createBottomTabNavigator()
 
@@ -79,6 +79,14 @@ const TabNavigator = () => (
     <Tab.Screen name="Order" component={OrderNavigator} />
     <Tab.Screen name="Fun" component={FunNavigator} />
     <Tab.Screen name="Me" component={MeNavigator} />
+    <Tab.Screen
+      name="Restuarant"
+      options={{
+        tabBarButton: () => null,
+        tabBarVisible: false,
+      }}
+      component={RestuarantNavigator}
+    />
   </Tab.Navigator>
 )
 

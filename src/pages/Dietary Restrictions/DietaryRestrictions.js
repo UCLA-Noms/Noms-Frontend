@@ -1,9 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {
-  Text, View, StatusBar, Image, SafeAreaView,
+  Text,
+  View,
+  StatusBar,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
 } from "react-native"
-import Button from "components/Button"
 import { ScrollView } from "react-native-gesture-handler"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"
@@ -23,8 +27,8 @@ const styles = EStyleSheet.create({
     marginTop: "1rem",
   },
   text: {
-    fontSize: "1rem",
-    marginBottom: "1rem",
+    fontSize: 20,
+    marginBottom: 10,
     width: "100%",
     paddingLeft: vw(6.25),
     paddingRight: vw(6.25),
@@ -63,7 +67,7 @@ const DietaryRestrictions = () => (
     <ScrollView>
       <View style={styles.root}>
         <StatusBar barStyle="light-content" />
-        <Text style={styles.title}>Almost Done!</Text>
+        <View style={{ marginTop: 20 }} />
         {/* placeholder for component for profile picture */}
         <Image
           style={styles.image}
@@ -71,35 +75,95 @@ const DietaryRestrictions = () => (
             uri: "http://www.clker.com/cliparts/t/O/b/8/F/F/lime-slice-md.png",
           }}
         />
-        <Text style={styles.text}>
-          Add your dietary restrictions or preferences for a better NOMS
-          experience!
+        <Text style={{ ...styles.text, textAlign: "center" }}>
+          camiemail@g.ucla.edu{" "}
+        </Text>
+        <Text style={{ ...styles.text, marginBottom: 0 }}>
+          Almost done! Add your dietary restrictions and/or allergies for a
+          better NOMS experience!
+        </Text>
+        <Text
+          style={{
+            ...styles.text,
+            marginBottom: 0,
+            fontWeight: "bold",
+            fontSize: 15,
+            fontStyle: "italic",
+          }}
+        >
+          You can always change these later!
         </Text>
 
         <View style={styles.buttonContainer}>
           <View style={{ flex: 1 }} />
-          <Button title="Skip" />
+          <TouchableOpacity
+            style={{
+              width: "100%",
+              borderRadius: 40,
+              height: 40,
+              backgroundColor: "#F5F5F5",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ textAlign: "center", color: "black", fontSize: 20 }}>
+              Skip
+            </Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.restrictionGrid}>
-          <DietToggle title="Vegetarian" value={false} />
-          <DietToggle title="Vegan" value={false} />
-          <DietToggle title="Halal" value={false} />
-          <DietToggle title="Dairy" value={false} />
-          <DietToggle title="Shellfish" value={false} />
-          <DietToggle title="Wheat" value={false} />
-          <DietToggle title="Vegetarian" value={false} />
-          <DietToggle title="Vegan" value={false} />
-          <DietToggle title="Halal" value={false} />
-          <DietToggle title="Dairy" value={false} />
-          <DietToggle title="Shellfish" value={false} />
-          <DietToggle title="Wheat" value={false} />
+          <Text style={styles.text}>Select any dietary restrictions:</Text>
+          <DietToggle title="Vegan" restrictionName="vegan" value={false} />
+          <DietToggle
+            title="Vegetarian"
+            restrictionName="vegetarian"
+            value={false}
+          />
+          <DietToggle
+            title="Gluten Free"
+            restrictionName="glutenFree"
+            value={false}
+          />
+          <DietToggle title="Halal" restrictionName="halal" value={false} />
+          <Text style={styles.text}>Select any allergies:</Text>
+          <DietToggle
+            title="Shellfish"
+            restrictionName="shellfish"
+            value={false}
+          />
+          <DietToggle title="Dairy" restrictionName="dairy" value={false} />
+          <DietToggle title="Fish" restrictionName="fish" value={false} />
+          <DietToggle title="Eggs" restrictionName="eggs" value={false} />
+          <DietToggle title="Nuts" restrictionName="nuts" value={false} />
+          <DietToggle title="Grain" restrictionName="grain" value={false} />
+          <DietToggle
+            title="Tree Nuts"
+            restrictionName="treeNuts"
+            value={false}
+          />
+          <DietToggle title="Soy" restrictionName="soy" value={false} />
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button title="Back" />
-          <View style={{ flex: 1 }} />
-          <Button title="Finish" />
+          {/* <Button title="Back" />
+          <View style={{ flex: 1 }} /> */}
+          <TouchableOpacity
+            style={{
+              width: "100%",
+              borderRadius: 40,
+              height: 40,
+              backgroundColor: "#38B6FF",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ textAlign: "center", color: "white", fontSize: 20 }}>
+              Finish
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>

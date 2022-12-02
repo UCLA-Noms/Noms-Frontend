@@ -14,6 +14,7 @@ import Checkout from "../../pages/Checkout"
 import DietaryRestrictions from "../../pages/Dietary Restrictions"
 import Home from "../../pages/Home"
 import CreateAccount from "../../pages/CreateAccount"
+import Restaurant from "../../pages/Restaurant"
 
 // ------------------------------------
 // Constants
@@ -77,6 +78,24 @@ export const ProfileSetupNavigator = () => (
   </Stack.Navigator>
 )
 
+export const RestuarantNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Home"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Restaurant"
+      component={Restaurant} // here is where things are being tested
+      options={({ navigation }) => ({
+        title: "Restaurant",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+  </Stack.Navigator>
+)
+
 export const HomeNavigator = () => (
   <Stack.Navigator
     initialRouteName="Home"
@@ -85,7 +104,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={Home}
+      component={Home} // here is where things are being tested
       options={({ navigation }) => ({
         title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
