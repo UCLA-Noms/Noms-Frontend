@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StyleSheet, Text, View } from "react-native"
 import { colors } from "theme"
-import PFP from "../../components/PFP"
-import Button from "../../components/Button"
+import PFP from "../components/PFP"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {

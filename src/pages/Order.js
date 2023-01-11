@@ -7,7 +7,7 @@ import {
 } from "slices/orders.slice"
 import PropTypes from "prop-types"
 import { colors } from "theme"
-import Button from "../../components/Button"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   container: {

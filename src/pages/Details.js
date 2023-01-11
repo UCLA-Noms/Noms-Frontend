@@ -4,7 +4,7 @@ import {
   StyleSheet, Text, View, StatusBar,
 } from "react-native"
 import { colors } from "theme"
-import Button from "../../components/Button"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {

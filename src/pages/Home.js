@@ -6,7 +6,7 @@ import {
 import RestaurantCard from "components/Restaurant Card"
 import { ScrollView } from "react-native-gesture-handler"
 import { vw } from "react-native-expo-viewport-units"
-import { images } from "../../theme"
+import { images } from "../theme"
 
 const styles = StyleSheet.create({
   root: {

@@ -5,7 +5,7 @@ import {
 } from "react-native"
 import { colors } from "theme"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
-import PFP from "../../components/PFP"
+import PFP from "../components/PFP"
 
 const styles = StyleSheet.create({
   root: {

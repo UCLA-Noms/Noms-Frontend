@@ -4,7 +4,7 @@ import {
   StyleSheet, Text, View, StatusBar,
 } from "react-native"
 import { colors } from "theme"
-import Button from "../../components/Button"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {
@@ -20,29 +20,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Me = ({ navigation }) => (
+const Fun = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Me</Text>
+    <Text style={styles.title}>Fun</Text>
     <Button
       title="Go to Details"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate("Details", { from: "Me" })
+        navigation.navigate("Details", { from: "Fun" })
       }}
     />
   </View>
 )
 
-Me.propTypes = {
+Fun.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Me.defaultProps = {
+Fun.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Me
+export default Fun

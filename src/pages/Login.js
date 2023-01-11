@@ -12,7 +12,7 @@ import { revokeAsync } from "expo-auth-session"
 // eslint-disable-next-line import/no-unresolved
 import { REACT_APP_EXPOCLIENTID } from "@env"
 import * as SecureStore from "expo-secure-store"
-import Button from "../../components/Button"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {
