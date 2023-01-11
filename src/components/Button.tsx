@@ -32,7 +32,14 @@ const Button = ({
 }) => {
   const btnStyle = [
     styles.root,
-    { width, height, backgroundColor, borderColor, borderWidth, borderRadius },
+    {
+      width,
+      height,
+      backgroundColor,
+      borderColor,
+      borderWidth,
+      borderRadius,
+    },
     style,
   ]
   const txtStyle = [styles.text, { color }, textStyle]
@@ -62,7 +69,9 @@ Button.defaultProps = {
   height: "auto",
   color: "black",
   backgroundColor: "#cacaca",
-  onPress: () => {},
+  onPress: () => {
+    console.log("Clicked")
+  },
   children: null,
   textStyle: {},
   style: {},

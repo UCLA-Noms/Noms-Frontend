@@ -2,10 +2,10 @@ import { React } from "react"
 import {
   StyleSheet, Text, View, TextInput,
 } from "react-native"
-import Button from "components/Button"
 import { colors } from "theme"
 import { useSelector } from "react-redux"
 import PropTypes from "prop-types"
+import Button from "../../components/Button"
 // import { CardField } from "@stripe/stripe-react-native"
 // , StripeProvider } from "@stripe/stripe-react-native"
 

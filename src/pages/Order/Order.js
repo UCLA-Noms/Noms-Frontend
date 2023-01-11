@@ -5,9 +5,9 @@ import CartItem from "components/CartItem"
 import {
   remove, empty, increment, decrement,
 } from "slices/orders.slice"
-import Button from "components/Button"
 import PropTypes from "prop-types"
 import { colors } from "theme"
+import Button from "../../components/Button"
 
 const styles = StyleSheet.create({
   container: {
