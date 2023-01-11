@@ -26,24 +26,24 @@ const ordersSlice = createSlice({
       return state
     },
     increment(state, { payload }) {
-      const item = state.cart.items.find(i => i.id === payload)
+      const item = state.cart.items.find((i) => i.id === payload)
       item.quantity += 1
       state.cart.total += item.price
       return state
     },
     decrement(state, { payload }) {
-      const item = state.cart.items.find(item => item.id === payload)
+      const item = state.cart.items.find((item) => item.id === payload)
       item.quantity -= 1
       state.cart.total -= item.price
       if (item.quantity === 0) {
-        state.cart.items = state.cart.items.filter(i => i.id !== item.id)
+        state.cart.items = state.cart.items.filter((i) => i.id !== item.id)
       }
       return state
     },
     remove(state, { payload }) {
-      const item = state.cart.items.find(item => item.id === payload)
+      const item = state.cart.items.find((item) => item.id === payload)
       state.cart.total -= item.price * item.quantity
-      state.cart.items = state.cart.items.filter(i => i.id !== item.id)
+      state.cart.items = state.cart.items.filter((i) => i.id !== item.id)
       return state
     },
     default(state) {
@@ -59,7 +59,5 @@ const ordersSlice = createSlice({
 
 export const { action } = ordersSlice
 
-export const {
-  empty, increment, decrement, remove,
-} = ordersSlice.actions
+export const { empty, increment, decrement, remove } = ordersSlice.actions
 export default ordersSlice.reducer

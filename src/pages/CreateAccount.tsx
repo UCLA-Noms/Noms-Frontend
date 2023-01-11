@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, View, Text, Button, TextInput,
-} from "react-native"
-import { colors } from "theme"
+import { StyleSheet, View, Text, Button, TextInput } from "react-native"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
-import PFP from "../../components/PFP"
+import { colors } from "../theme"
+import PFP from "../components/PFP"
 
 const styles = StyleSheet.create({
   root: {

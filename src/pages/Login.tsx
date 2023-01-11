@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { Image, StyleSheet, View } from "react-native"
-import { colors, images } from "theme"
 import * as WebBrowser from "expo-web-browser"
 import { useSelector, useDispatch } from "react-redux"
-import { authenticate } from "slices/app.slice"
 
 import * as Google from "expo-auth-session/providers/google"
 
@@ -12,7 +10,9 @@ import { revokeAsync } from "expo-auth-session"
 // eslint-disable-next-line import/no-unresolved
 import { REACT_APP_EXPOCLIENTID } from "@env"
 import * as SecureStore from "expo-secure-store"
-import Button from "../../components/Button"
+import { colors, images } from "../theme"
+import { authenticate } from "../slices/app.slice"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 WebBrowser.maybeCompleteAuthSession()
 
 const Login = ({ navigation }) => {
-  const { loggedIn } = useSelector(state => state.app)
+  const { loggedIn } = useSelector((state) => state.app)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -132,8 +132,8 @@ const Login = ({ navigation }) => {
         onPress={
           !accessToken
             ? () => {
-              login({ useProxy: true })
-            }
+                login({ useProxy: true })
+              }
             : logout
         }
       />

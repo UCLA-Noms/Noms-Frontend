@@ -1,11 +1,9 @@
 import { React } from "react"
-import {
-  StyleSheet, Text, View, TextInput,
-} from "react-native"
-import { colors } from "theme"
+import { StyleSheet, Text, View, TextInput } from "react-native"
 import { useSelector } from "react-redux"
 import PropTypes from "prop-types"
-import Button from "../../components/Button"
+import { colors } from "../theme"
+import Button from "../components/Button"
 // import { CardField } from "@stripe/stripe-react-native"
 // , StripeProvider } from "@stripe/stripe-react-native"
 
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
 })
 
 const Checkout = ({ navigation }) => {
-  const { total } = useSelector(state => state.orders.cart)
+  const { total } = useSelector((state) => state.orders.cart)
   // const [name, setName] = useState("")
   // const [email, setEmail] = useState("")
 

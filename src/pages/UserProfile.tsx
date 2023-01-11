@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
-import { colors } from "theme"
-import Button from "../../components/Button"
+import { StyleSheet, Text, View, StatusBar } from "react-native"
+import { colors } from "../theme"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {
@@ -20,29 +18,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Fun = ({ navigation }) => (
+const Me = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Fun</Text>
+    <Text style={styles.title}>Me</Text>
     <Button
       title="Go to Details"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate("Details", { from: "Fun" })
+        navigation.navigate("Details", { from: "Me" })
       }}
     />
   </View>
 )
 
-Fun.propTypes = {
+Me.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Fun.defaultProps = {
+Me.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Fun
+export default Me

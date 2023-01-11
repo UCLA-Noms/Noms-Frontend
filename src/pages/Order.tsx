@@ -1,13 +1,11 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { Text, View, StyleSheet } from "react-native"
-import CartItem from "components/CartItem"
-import {
-  remove, empty, increment, decrement,
-} from "slices/orders.slice"
 import PropTypes from "prop-types"
-import { colors } from "theme"
-import Button from "../../components/Button"
+import { remove, empty, increment, decrement } from "../slices/orders.slice"
+import CartItem from "../components/CartItem"
+import { colors } from "../theme"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   container: {
@@ -39,7 +37,7 @@ const styles = StyleSheet.create({
 })
 
 const Order = ({ navigation }) => {
-  const { items, total } = useSelector(state => state.orders.cart)
+  const { items, total } = useSelector((state) => state.orders.cart)
   const dispatch = useDispatch()
 
   const onIncrement = (id) => {
@@ -61,7 +59,7 @@ const Order = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Order</Text>
-      {items.map(item => (
+      {items.map((item) => (
         <CartItem
           item={item}
           key={item.id}

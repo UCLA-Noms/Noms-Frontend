@@ -1,7 +1,7 @@
 import React from "react"
 import { Image, View } from "react-native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { colors, images } from "theme"
+import { colors, images } from "../../theme"
 
 // stack navigators
 import {

@@ -4,8 +4,8 @@ import {
   getDefaultMiddleware,
 } from "@reduxjs/toolkit"
 import logger from "redux-logger"
-import appReducer from "slices/app.slice"
-import ordersReducer from "slices/orders.slice"
+import appReducer from "../slices/app.slice"
+import ordersReducer from "../slices/orders.slice"
 
 const rootReducer = combineReducers({
   app: appReducer,

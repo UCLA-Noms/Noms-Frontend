@@ -1,10 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
-import { colors } from "theme"
-import Button from "../../components/Button"
+import { StyleSheet, Text, View, StatusBar } from "react-native"
+import { colors } from "../theme"
+import Button from "../components/Button"
 
 const styles = StyleSheet.create({
   root: {
