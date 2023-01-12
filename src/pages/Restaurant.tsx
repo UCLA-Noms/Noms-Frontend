@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Text, View, StatusBar, Image, SafeAreaView } from "react-native"
+import {
+  Text, View, StatusBar, Image, SafeAreaView,
+} from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"

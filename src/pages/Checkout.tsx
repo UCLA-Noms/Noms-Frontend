@@ -1,5 +1,7 @@
 import { React } from "react"
-import { StyleSheet, Text, View, TextInput } from "react-native"
+import {
+  StyleSheet, Text, View, TextInput,
+} from "react-native"
 import { useSelector } from "react-redux"
 import PropTypes from "prop-types"
 import { colors } from "../theme"
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
 })
 
 const Checkout = ({ navigation }) => {
-  const { total } = useSelector((state) => state.orders.cart)
+  const { total } = useSelector(state => state.orders.cart)
   // const [name, setName] = useState("")
   // const [email, setEmail] = useState("")
 

@@ -16,8 +16,6 @@ const dietaryIcons = {
 }
 
 // image preloading
-export const imageAssets = Object.keys(dietaryIcons).map((key) =>
-  Asset.fromModule(dietaryIcons[key]).downloadAsync(),
-)
+export const imageAssets = Object.keys(dietaryIcons).map(key => Asset.fromModule(dietaryIcons[key]).downloadAsync())
 
 export default dietaryIcons

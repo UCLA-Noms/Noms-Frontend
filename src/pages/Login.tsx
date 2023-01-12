@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 WebBrowser.maybeCompleteAuthSession()
 
 const Login = ({ navigation }) => {
-  const { loggedIn } = useSelector((state) => state.app)
+  const { loggedIn } = useSelector(state => state.app)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -132,8 +132,8 @@ const Login = ({ navigation }) => {
         onPress={
           !accessToken
             ? () => {
-                login({ useProxy: true })
-              }
+              login({ useProxy: true })
+            }
             : logout
         }
       />

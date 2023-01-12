@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StyleSheet, StatusBar, SafeAreaView, Image } from "react-native"
+import {
+  StyleSheet, StatusBar, SafeAreaView, Image,
+} from "react-native"
 import RestaurantCard from "components/Restaurant Card"
 import { ScrollView } from "react-native-gesture-handler"
 import { vw } from "react-native-expo-viewport-units"
