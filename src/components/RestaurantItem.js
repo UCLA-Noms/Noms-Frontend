@@ -5,7 +5,7 @@ import {
 } from "react-native"
 import { vw } from "react-native-expo-viewport-units"
 // import Button from "../Button"
-import DietaryRestrictionIcon from "../DietaryRestrictionIcon"
+import DietaryRestrictionIcon from "./DietaryRestrictionIcon"
 
 // const styles = {
 //   root: {

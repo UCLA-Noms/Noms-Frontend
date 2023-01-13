@@ -3,7 +3,7 @@ import React from "react"
 import { Image } from "react-native"
 // import EStyleSheet from "react-native-extended-stylesheet"
 // import { vw } from "react-native-expo-viewport-units"
-import dietaryIcons from "../../theme/dietaryIcons"
+import dietaryIcons from "../theme/dietaryIcons"
 
 const DietaryRestrictionIcon = ({ restrictionName, size, style }) => (
   <Image

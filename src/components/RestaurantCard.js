@@ -4,7 +4,7 @@ import {
   TouchableOpacity, Text, Image, View,
 } from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
-import { images } from "../../theme"
+import { images } from "../theme"
 
 const styles = EStyleSheet.create({
   restaurantName: {

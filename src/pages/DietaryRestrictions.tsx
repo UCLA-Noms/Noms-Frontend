@@ -11,7 +11,7 @@ import {
 import { ScrollView } from "react-native-gesture-handler"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"
-import DietToggle from "../components/Diet Toggle"
+import DietToggle from "../components/DietToggle"
 
 const styles = EStyleSheet.create({
   root: {

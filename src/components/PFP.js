@@ -1,7 +1,7 @@
 import { Image, StyleSheet, View } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import PropTypes from "prop-types"
-import { images, colors } from "../../theme"
+import { images, colors } from "../theme"
 
 const styles = StyleSheet.create({
   root: {

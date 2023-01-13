@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, StatusBar, SafeAreaView, Image,
-} from "react-native"
-import RestaurantCard from "components/Restaurant Card"
+import { StyleSheet, StatusBar, SafeAreaView, Image } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { vw } from "react-native-expo-viewport-units"
+import RestaurantCard from "../components/RestaurantCard"
 import { images } from "../theme"
 
 const styles = StyleSheet.create({

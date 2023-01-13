@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { TouchableOpacity, Text, View } from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"
-import DietaryRestrictionIcon from "../DietaryRestrictionIcon"
+import DietaryRestrictionIcon from "./DietaryRestrictionIcon"
 
 const styles = EStyleSheet.create({
   root: {
