@@ -1,16 +1,20 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
-import { colors } from "theme"
-import Home from "pages/Home"
-import Details from "pages/Details"
-import Order from "pages/Order"
-import Me from "pages/Me"
 import HeaderLeft from "./HeaderLeft"
 import HeaderTitle from "./HeaderTitle"
+import { colors } from "../../theme"
+import Details from "../../pages/Details"
+import Order from "../../pages/Order"
+import Me from "../../pages/UserProfile"
 import Logo from "../../pages/Logo"
 import Login from "../../pages/Login"
 import PFPSelector from "../../pages/PFPSelector"
-import Fun from "../../pages/Fun"
+import Fun from "../../pages/Discover"
+import Checkout from "../../pages/Checkout"
+import DietaryRestrictions from "../../pages/DietaryRestrictions"
+import Home from "../../pages/Home"
+import CreateAccount from "../../pages/CreateAccount"
+import Restaurant from "../../pages/Restaurant"
 
 // ------------------------------------
 // Constants
@@ -55,6 +59,40 @@ export const ProfileSetupNavigator = () => (
         headerShown: false,
       })}
     />
+    <Stack.Screen
+      name="DietaryRestriction"
+      component={DietaryRestrictions}
+      options={() => ({
+        title: "Dietary Restriction",
+        headerShown: false,
+      })}
+    />
+    <Stack.Screen
+      name="CreateAccount"
+      component={CreateAccount}
+      options={() => ({
+        title: "Create Account",
+        headerShown: false,
+      })}
+    />
+  </Stack.Navigator>
+)
+
+export const RestuarantNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Home"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Restaurant"
+      component={Restaurant} // here is where things are being tested
+      options={({ navigation }) => ({
+        title: "Restaurant",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
   </Stack.Navigator>
 )
 
@@ -66,7 +104,7 @@ export const HomeNavigator = () => (
   >
     <Stack.Screen
       name="Home"
-      component={Home}
+      component={Home} // here is where things are being tested
       options={({ navigation }) => ({
         title: "Home",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
@@ -99,10 +137,10 @@ export const OrderNavigator = () => (
       })}
     />
     <Stack.Screen
-      name="Details"
-      component={Details}
+      name="Checkout"
+      component={Checkout}
       options={{
-        title: "Details",
+        title: "Checkout",
       }}
     />
   </Stack.Navigator>

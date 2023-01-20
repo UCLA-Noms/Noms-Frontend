@@ -4,9 +4,11 @@ import { TouchableOpacity, Text } from "react-native"
 
 const styles = {
   root: {
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 8,
     paddingHorizontal: 16,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   text: {
     textAlign: "center",
@@ -20,12 +22,26 @@ const Button = ({
   height,
   color,
   backgroundColor,
+  borderColor,
+  borderWidth,
+  borderRadius,
   onPress,
   children,
   textStyle,
   style,
 }) => {
-  const btnStyle = [styles.root, { width, height, backgroundColor }, style]
+  const btnStyle = [
+    styles.root,
+    {
+      width,
+      height,
+      backgroundColor,
+      borderColor,
+      borderWidth,
+      borderRadius,
+    },
+    style,
+  ]
   const txtStyle = [styles.text, { color }, textStyle]
   return (
     <TouchableOpacity onPress={onPress} style={btnStyle}>
@@ -53,7 +69,9 @@ Button.defaultProps = {
   height: "auto",
   color: "black",
   backgroundColor: "#cacaca",
-  onPress: () => {},
+  onPress: () => {
+    console.log("Clicked")
+  },
   children: null,
   textStyle: {},
   style: {},
