@@ -20,6 +20,7 @@ module.exports = (api) => {
       [
         "module:react-native-dotenv",
       ],
+      ["@babel/plugin-proposal-private-methods", { loose: true }],
     ],
   }
 }
