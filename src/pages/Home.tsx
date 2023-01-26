@@ -4,7 +4,6 @@ import { StyleSheet, StatusBar, SafeAreaView, Image } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { vw } from "react-native-expo-viewport-units"
 import RestaurantCard from "../components/RestaurantCard"
-import PaymentPopup from "../components/PaymentPopup"
 import { images } from "../theme"
 
 const styles = StyleSheet.create({
@@ -25,7 +24,6 @@ const Home = ({ navigation }) => (
   <SafeAreaView style={styles.root}>
     <StatusBar barStyle="light-content" />
     <ScrollView style={{ width: "100%" }}>
-      <PaymentPopup></PaymentPopup>
       <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} />
       <RestaurantCard
         restaurantName="Drey"
