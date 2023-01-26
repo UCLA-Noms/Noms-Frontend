@@ -7,8 +7,6 @@ import { useSelector, useDispatch } from "react-redux"
 import * as Google from "expo-auth-session/providers/google"
 
 import { revokeAsync } from "expo-auth-session"
-// eslint-disable-next-line import/no-unresolved
-import { REACT_APP_EXPOCLIENTID } from "@env"
 import * as SecureStore from "expo-secure-store"
 import { colors, images } from "../theme"
 import { authenticate } from "../slices/app.slice"
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
 WebBrowser.maybeCompleteAuthSession()
 
 const Login = ({ navigation }) => {
-  const { loggedIn } = useSelector(state => state.app)
+  const { loggedIn } = useSelector((state) => state.app)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -46,9 +44,9 @@ const Login = ({ navigation }) => {
   // TODO: switch router by loggedIn state
   console.log("[##] loggedIn", loggedIn)
 
-  // eslint-disable-next-line no-unused-vars
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: REACT_APP_EXPOCLIENTID,
+    clientId: process.env.REACT_APP_WEBCLIENTID,
+    expoClientId: process.env.REACT_APP_EXPOCLIENTID,
   })
 
   const [accessToken, setAccessToken] = useState()
@@ -132,8 +130,8 @@ const Login = ({ navigation }) => {
         onPress={
           !accessToken
             ? () => {
-              login({ useProxy: true })
-            }
+                login({ useProxy: true })
+              }
             : logout
         }
       />
