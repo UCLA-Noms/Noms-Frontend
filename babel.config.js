@@ -17,9 +17,11 @@ module.exports = (api) => {
       ],
       "react-native-reanimated/plugin",
       "@babel/plugin-proposal-export-namespace-from",
-      [
-        "module:react-native-dotenv",
-      ],
+      // [
+      //   "module:react-native-dotenv",
+      // ],
+      ["@babel/plugin-proposal-private-methods", { loose: true }],
+      "inline-dotenv",
     ],
   }
 }
