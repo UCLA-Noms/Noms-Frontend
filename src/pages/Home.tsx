@@ -44,7 +44,7 @@ const Home = ({ navigation }) => {
       <ScrollView style={{ width: "100%" }}>
         {/* <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} /> */}
         <View
-          style={{ borderRadius: 10, padding: 10, margin: 20, borderWidth: 1, flexDirection: "row", justifyContent: "space-between" }}>
+          style={{ flex: 1, borderRadius: 10, padding: 10, margin: 20, borderWidth: 1, flexDirection: "row", justifyContent: "space-between" }}>
           <TextInput
             style={{ flexGrow: 1, width: "80%", height: "100%", fontSize: 20 }}
             onChangeText={(text) => { setSearch(text); search(text); /* TODO: search every time query in searchbar is changed? */ }}
@@ -54,7 +54,7 @@ const Home = ({ navigation }) => {
           />
           {/*<Button title={'test'} />*/}
           <TouchableOpacity>
-            <Image source={images.slider} />
+            <Image source={images.slider} style={{ height: "100%", width: undefined, aspectRatio: 1 }} />
           </TouchableOpacity>
         </View>
         {visibleRestaurants[0] ? <RestaurantCard
