@@ -66,9 +66,10 @@ const Me = ({ navigation }) => (
       <PFP image={1} size={100} />
       <TouchableOpacity style={styles.editPFPButton}>
         <Text>
-          <span role="img" aria-label="pencil">
-            ✏️
-          </span>
+          {/* <span role="img" aria-label="pencil"> */}
+          {/* // eslint-disable-next-line */}
+          ✏️
+          {/* </span> */}
         </Text>
       </TouchableOpacity>
     </View>
