@@ -1,13 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet,
-  Text,
-  View,
-  StatusBar,
-  Touchable,
-  Image,
-} from "react-native"
+import { StyleSheet, Text, View, StatusBar, Image } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { colors, images } from "../theme"
 import Button from "../components/Button"
@@ -118,7 +111,7 @@ const Me = ({ navigation }) => (
       color="black"
       backgroundColor={colors.white}
       onPress={() => {
-        navigation.navigate("Details", { from: "Me" })
+        navigation.navigate("Order History", { from: "Me" })
       }}
       textStyle={{ fontSize: 20 }}
       style={{ display: "flex", flexDirection: "row", marginBottom: 20 }}
