@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
+import { StyleSheet, Text, View, StatusBar } from "react-native"
 import { colors } from "../theme"
 import Button from "../components/Button"
 
@@ -31,6 +29,20 @@ const Me = ({ navigation }) => (
       onPress={() => {
         navigation.navigate("Details", { from: "Me" })
       }}
+      borderColor={undefined}
+      borderRadius={undefined}
+      borderWidth={undefined}
+    />
+    <Button
+      title="Go to Order History"
+      color="white"
+      backgroundColor={colors.lightPurple}
+      onPress={() => {
+        navigation.navigate("OrderHistory", { from: "Me" })
+      }}
+      borderColor={undefined}
+      borderRadius={undefined}
+      borderWidth={undefined}
     />
   </View>
 )
