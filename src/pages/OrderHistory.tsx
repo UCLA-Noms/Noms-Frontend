@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 })
 
-let orderHistory = [
+const orderHistory = [
   {
     number: 1001,
     restaurant: "Justin's Pizzeria",
@@ -43,22 +43,20 @@ let orderHistory = [
   },
 ]
 
-const OrderHistory = ({ route, navigation }) => {
-  return (
-    <View style={styles.root}>
-      <Text style={styles.title}>Order History</Text>
-      <Button
-        title="Go Back"
-        color="white"
-        backgroundColor={colors.pink}
-        onPress={navigation.goBack}
-      />
-      {orderHistory.map((order) => (
-        <OrderHistoryItem key={order.number} order={order}></OrderHistoryItem>
-      ))}
-    </View>
-  )
-}
+const OrderHistory = ({ route, navigation }) => (
+  <View style={styles.root}>
+    <Text style={styles.title}>Order History</Text>
+    <Button
+      title="Go Back"
+      color="white"
+      backgroundColor={colors.pink}
+      onPress={navigation.goBack}
+    />
+    {orderHistory.map((order) => (
+      <OrderHistoryItem key={order.number} order={order} />
+    ))}
+  </View>
+)
 
 OrderHistory.propTypes = {
   route: PropTypes.shape({

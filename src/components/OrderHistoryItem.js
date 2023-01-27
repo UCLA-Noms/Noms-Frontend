@@ -1,4 +1,6 @@
-import { StyleSheet, Text, View, Image, Button } from "react-native"
+import {
+  StyleSheet, Text, View, Image, Button,
+} from "react-native"
 import PropTypes from "prop-types"
 
 const styles = StyleSheet.create({
@@ -35,7 +37,7 @@ function OrderHistoryItem({ order }) {
       <View style={styles.info}>
         <Text style={styles.restaurant}>{order.restaurant}</Text>
         <Text style={styles.restaurant}>Order #{order.number}</Text>
-        {order.items.map((item) => (
+        {order.items.map(item => (
           <Text style={styles.restaurant}>{item}</Text>
         ))}
         <Text style={styles.date}>{order.date}</Text>
