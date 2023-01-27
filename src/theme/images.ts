@@ -22,9 +22,12 @@ const images = {
   rListing3: require("../../assets/images/rListing3.png"),
   rListing4: require("../../assets/images/rListing4.png"),
   bruh: require("../../assets/images/bruh.png"),
+  add_filled: require("../../assets/images/carbon_add-filled.png"),
 }
 
 // image preloading
-export const imageAssets = Object.keys(images).map(key => Asset.fromModule(images[key]).downloadAsync())
+export const imageAssets = Object.keys(images).map((key) =>
+  Asset.fromModule(images[key]).downloadAsync(),
+)
 
 export default images
