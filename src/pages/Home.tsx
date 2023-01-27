@@ -23,21 +23,26 @@ const styles = StyleSheet.create({
 })
 
 const Home = ({ navigation }) => {
+
   const [searchText, setSearch] = React.useState("")
-  const [visibleRestaurants, setVisible] = React.useState([true, true, true, true])
-  const restaurantNames = ["Drey", "Egg Tuck", "Le Pain Quotidien", "Restaurant 4"]
+  const [restaurants, setRestaurants] = React.useState([
+    { name: "Drey", visible: true },
+    { name: "Egg Tuck", visible: true },
+    { name: "Le Pain Quotidien", visible: true },
+    { name: "Restaurant 4", visible: true }
+  ])
 
   const search = (query) => { // TEMPORARY: searches for occurrence(s) of query in restaurant names
-    const newVisible = []
+    const newVisible = [...restaurants]
     const re = new RegExp(query, "i") // case insensitive
-    for (let i = 0; i < restaurantNames.length; i += 1) {
-      if (re.test(restaurantNames[i])) {
-        newVisible.push(true)
+    for (let i = 0; i < restaurants.length; i += 1) {
+      if (re.test(restaurants[i].name)) {
+        newVisible[i].visible = true
       } else {
-        newVisible.push(false)
+        newVisible[i].visible = false
       }
     }
-    setVisible(newVisible)
+    setRestaurants(newVisible)
   }
 
   return (
@@ -64,51 +69,18 @@ const Home = ({ navigation }) => {
             <Image source={images.slider} style={{ height: "100%", width: undefined, aspectRatio: 1 }} />
           </TouchableOpacity>
         </View>
-        {visibleRestaurants[0] ? (
+        {restaurants.map((rest) =>
+        (rest.visible ?
           <RestaurantCard
-            restaurantName={restaurantNames[0]}
+            restaurantName={rest.name}
             closingTime={new Date()}
             rating={2.3}
             price={4}
             distance={1.5}
             liked={false}
             navigation={navigation}
-            image="rListing4"
-          />
-        ) : null}
-        {visibleRestaurants[1] ? (
-          <RestaurantCard
-            restaurantName={restaurantNames[1]}
-            closingTime={new Date()}
-            rating={2.3}
-            price={4}
-            distance={1.5}
-            liked={false}
-            image="rListing1"
-          />
-        ) : null}
-        {visibleRestaurants[2] ? (
-          <RestaurantCard
-            restaurantName={restaurantNames[2]}
-            closingTime={new Date()}
-            rating={2.3}
-            price={4}
-            distance={1.5}
-            liked={false}
-            image="rListing2"
-          />
-        ) : null}
-        {visibleRestaurants[3] ? (
-          <RestaurantCard
-            restaurantName={restaurantNames[3]}
-            closingTime={new Date()}
-            rating={2.3}
-            price={4}
-            distance={1.5}
-            liked={false}
-            image="rListing3"
-          />
-        ) : null}
+            image="rListing4" /> : null
+        ))}
       </ScrollView>
     </SafeAreaView>
   )
