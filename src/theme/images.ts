@@ -22,6 +22,7 @@ const images = {
   rListing3: require("../../assets/images/rListing3.png"),
   rListing4: require("../../assets/images/rListing4.png"),
   bruh: require("../../assets/images/bruh.png"),
+  slider: require("../../assets/images/Slider.png"),
   add_filled: require("../../assets/images/carbon_add-filled.png"),
 }
 
