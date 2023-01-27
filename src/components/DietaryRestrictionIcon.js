@@ -1,5 +1,5 @@
 import React from "react"
-// import PropTypes from "prop-types"
+import PropTypes from "prop-types"
 import { Image } from "react-native"
 // import EStyleSheet from "react-native-extended-stylesheet"
 // import { vw } from "react-native-expo-viewport-units"
@@ -11,7 +11,7 @@ const DietaryRestrictionIcon = ({ restrictionName, size, style }) => (
       ...style,
       width: size,
       height: size,
-      borderRadius: "100%",
+      borderRadius: size,
     }}
     source={dietaryIcons[restrictionName]}
   />
@@ -29,11 +29,15 @@ DietaryRestrictionIcon.propTypes = {
   // children: PropTypes.string,
   // textStyle: PropTypes.shape({}),
   // style: PropTypes.shape({}),
+  restrictionName: PropTypes.string,
+  size: PropTypes.number,
+  style: PropTypes.shape({}),
 }
 
 DietaryRestrictionIcon.defaultProps = {
-  title: "DietToggle",
-  value: false,
+  restrictionName: "dairy",
+  size: 30,
+  style: {},
   // title: null,
   // width: "auto",
   // height: "auto",
