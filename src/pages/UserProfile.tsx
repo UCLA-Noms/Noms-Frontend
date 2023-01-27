@@ -38,7 +38,7 @@ const Me = ({ navigation }) => (
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate("OrderHistory", { from: "Me" })
+        navigation.navigate("Order History", { from: "Me" })
       }}
       borderColor={undefined}
       borderRadius={undefined}

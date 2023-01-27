@@ -28,16 +28,17 @@ const styles = StyleSheet.create({
   },
 })
 
-function OrderHistoryItem(order) {
+function OrderHistoryItem({ order }) {
+  console.log(order)
   return (
     <View style={styles.container}>
       <View style={styles.info}>
         <Text style={styles.restaurant}>{order.restaurant}</Text>
-        <Text style={styles.restaurant}>Order #{order.id}</Text>
+        <Text style={styles.restaurant}>Order #{order.number}</Text>
         {order.items.map((item) => (
           <Text style={styles.restaurant}>{item}</Text>
         ))}
-        <Text style={styles.date}>${order.date}</Text>
+        <Text style={styles.date}>{order.date}</Text>
         <Text style={styles.status}>{order.status}</Text>
       </View>
     </View>

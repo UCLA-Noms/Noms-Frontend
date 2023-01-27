@@ -15,6 +15,7 @@ import DietaryRestrictions from "../../pages/DietaryRestrictions"
 import Home from "../../pages/Home"
 import CreateAccount from "../../pages/CreateAccount"
 import Restaurant from "../../pages/Restaurant"
+import OrderHistory from "../../pages/OrderHistory"
 
 // ------------------------------------
 // Constants
@@ -118,6 +119,13 @@ export const HomeNavigator = () => (
         title: "Details",
       }}
     />
+    <Stack.Screen
+      name="Order History"
+      component={OrderHistory}
+      options={{
+        title: "Order History",
+      }}
+    />
   </Stack.Navigator>
 )
 
@@ -191,6 +199,13 @@ export const MeNavigator = () => (
       component={Details}
       options={{
         title: "Details",
+      }}
+    />
+    <Stack.Screen
+      name="Order History"
+      component={OrderHistory}
+      options={{
+        title: "Order History",
       }}
     />
   </Stack.Navigator>
