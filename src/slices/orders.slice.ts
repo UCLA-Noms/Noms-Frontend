@@ -7,12 +7,12 @@ const initialState = {
       {
         id: 900,
         name: "Burger",
-        price: 5,
+        price: 4.99,
         quantity: 1,
         image: "https://picsum.photos/200/300",
       },
     ],
-    total: 5,
+    total: 4.99,
   },
 }
 
@@ -47,7 +47,8 @@ const ordersSlice = createSlice({
       return state
     },
     append(state, { payload }) {
-      // if the item is already in the cart, increment it else add it
+      payload.id = payload.itemId
+      delete payload.itemId
       const item = state.cart.items.find((item) => item.id === payload.id)
       if (item) {
         item.quantity += 1

@@ -11,7 +11,7 @@ const DietaryRestrictionIcon = ({ restrictionName, size, style }) => (
       ...style,
       width: size,
       height: size,
-      borderRadius: "100%",
+      // borderRadius: "100%",
     }}
     source={dietaryIcons[restrictionName]}
   />
