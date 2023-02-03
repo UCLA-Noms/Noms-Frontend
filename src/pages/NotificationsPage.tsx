@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { StyleSheet, Text, View, StatusBar, Image, Switch } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
@@ -39,20 +39,35 @@ const styles = StyleSheet.create({
   },
 })
 
-const NotificationsPage = ({ navigation }) => (
-  <View style={styles.root}>
-    <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Notifications</Text>
-    <View style={styles.optionView}>
-      <Text style={styles.subtitle}>allow app to send notifications</Text>
-      <Switch></Switch>
+const NotificationsPage = ({ navigation }) => {
+  const [allNotifs, setAllNotifs] = useState(false)
+  const [rewardNotifs, setRewardNotifs] = useState(false)
+
+  return (
+    <View style={styles.root}>
+      <StatusBar barStyle="light-content" />
+      <Text style={styles.title}>Notifications</Text>
+      <View style={styles.optionView}>
+        <Text style={styles.subtitle}>allow app to send notifications</Text>
+        <Switch
+          value={allNotifs}
+          onValueChange={() => {
+            setAllNotifs(!allNotifs)
+          }}
+        />
+      </View>
+      <View style={styles.optionView}>
+        <Text style={styles.subtitle}>allow notifications for rewards</Text>
+        <Switch
+          value={rewardNotifs}
+          onValueChange={() => {
+            setRewardNotifs(!rewardNotifs)
+          }}
+        />
+      </View>
     </View>
-    <View style={styles.optionView}>
-      <Text style={styles.subtitle}>allow notifications for rewards</Text>
-      <Switch></Switch>
-    </View>
-  </View>
-)
+  )
+}
 
 NotificationsPage.propTypes = {
   navigation: PropTypes.shape({
