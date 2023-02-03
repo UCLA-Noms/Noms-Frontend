@@ -1,5 +1,5 @@
-import { Text, TextInput, View } from "react-native"
-import Button from "./Button"
+import { Text, TextInput, View } from "react-native";
+import Button from "./Button";
 
 function PaymentPopup() {
   return (
@@ -16,7 +16,7 @@ function PaymentPopup() {
       <TextInput placeholder="00000" />
       <Button title="Save" />
     </View>
-  )
+  );
 }
 
-export default PaymentPopup
+export default PaymentPopup;

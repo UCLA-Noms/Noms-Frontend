@@ -1,8 +1,8 @@
 import {
   Text, View, Image, Button,
-} from "react-native"
-import styles from "./CartItem.css"
-import PropTypes from "prop-types"
+} from "react-native";
+import styles from "./CartItem.css";
+import PropTypes from "prop-types";
 
 function CartItem({
   item, onIncrement, onDecrement, onRemove,
@@ -33,7 +33,7 @@ function CartItem({
         />
       </View>
     </View>
-  )
+  );
 }
 
 CartItem.propTypes = {
@@ -47,6 +47,6 @@ CartItem.propTypes = {
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
-}
+};
 
-export default CartItem
+export default CartItem;

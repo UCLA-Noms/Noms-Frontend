@@ -1,0 +1,27 @@
+root {
+  padding: 8 16;
+  border-radius: 5;
+}
+
+.text {
+  text-align: center;
+  font-size: 13;
+  border-radius: 0.5rem;
+  padding: 5;
+}
+
+.container {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  width: vw(25);
+  height: vw(25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggledOn {
+  background-color: #cbe6ff;
+  padding: 10;
+  border-radius: 100%;
+}

@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    semi: 0,
+    semi: [2, "always"],
     quotes: [2, "double"],
     "react/jsx-filename-extension": "off",
     "react/jsx-one-expression-per-line": "off",
@@ -72,4 +72,4 @@ module.exports = {
       },
     },
   },
-}
+};
