@@ -23,13 +23,12 @@ const styles = StyleSheet.create({
 })
 
 const Home = ({ navigation }) => {
-
   const [searchText, setSearch] = React.useState("")
   const [restaurants, setRestaurants] = React.useState([
     { name: "Drey", visible: true },
     { name: "Egg Tuck", visible: true },
     { name: "Le Pain Quotidien", visible: true },
-    { name: "Restaurant 4", visible: true }
+    { name: "Restaurant 4", visible: true },
   ])
 
   const search = (query) => { // TEMPORARY: searches for occurrence(s) of query in restaurant names
@@ -69,17 +68,19 @@ const Home = ({ navigation }) => {
             <Image source={images.slider} style={{ height: "100%", width: undefined, aspectRatio: 1 }} />
           </TouchableOpacity>
         </View>
-        {restaurants.map((rest) =>
-        (rest.visible ?
-          <RestaurantCard
-            restaurantName={rest.name}
-            closingTime={new Date()}
-            rating={2.3}
-            price={4}
-            distance={1.5}
-            liked={false}
-            navigation={navigation}
-            image="rListing4" /> : null
+        {restaurants.map(rest => (rest.visible
+          ? (
+            <RestaurantCard
+              restaurantName={rest.name}
+              closingTime={new Date()}
+              rating={2.3}
+              price={4}
+              distance={1.5}
+              liked={false}
+              navigation={navigation}
+              image="rListing4"
+            />
+          ) : null
         ))}
       </ScrollView>
     </SafeAreaView>

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 25,
   },
   smalltext: {
     fontSize: 20,
@@ -73,17 +73,17 @@ const PFPSelector = ({ route, navigation }) => {
     <View style={styles.root}>
       <Text
         style={[
-          styles.smalltext,
+          styles.subtitle,
           {
             width: "86%",
             flexDirection: "row",
             fontWeight: "bold",
-            fontStyle: "italic",
-            alignItems: "flex-start",
+            alignItems: "center",
+            textAlign: "center"
           },
         ]}
       >
-        Choose a profile picture:
+        Choose a profile picture!
       </Text>
       <View style={{ height: "35%" }}>
         <View style={styles.container}>
@@ -143,8 +143,8 @@ const PFPSelector = ({ route, navigation }) => {
           onPress={() => {
             if (selected !== null) {
               navigation.navigate("CreateAccount", {
-                username: username,
-                email: email,
+                username,
+                email,
                 pfp: selected,
               }) // temporarily pass profile image by props
             }
