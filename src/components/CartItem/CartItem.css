@@ -1,0 +1,48 @@
+.container {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10;
+  border-bottom-width: 1;
+  border-bottom-color: #ccc;
+}
+
+.image {
+  width: 100;
+  height: 100;
+}
+
+.info {
+  flex: 1;
+  margin-left: 10;
+}
+
+.name {
+  font-size: 20;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 16;
+  font-weight: bold;
+}
+
+.quantity {
+  font-size: 16;
+  font-weight: bold;
+}
+
+.actions {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100;
+}
+
+.button {
+  width: 30;
+  height: 30;
+  background-color: "#ccc";
+  justify-content: "center";
+  align-items: "center";
+}

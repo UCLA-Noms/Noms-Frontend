@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    semi: [2, "never"],
+    semi: 0,
     quotes: [2, "double"],
     "react/jsx-filename-extension": "off",
     "react/jsx-one-expression-per-line": "off",
@@ -62,6 +62,7 @@ module.exports = {
         ignoredNodes: ["TemplateLiteral"],
       },
     ],
+    "import/order": "off",
   },
   settings: {
     "import/resolver": {
