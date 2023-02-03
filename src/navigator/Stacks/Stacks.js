@@ -8,6 +8,7 @@ import Order from "../../pages/Order"
 import Me from "../../pages/UserProfile"
 import Logo from "../../pages/Logo"
 import Login from "../../pages/Login"
+import Welcome from "../../pages/Welcome"
 import PFPSelector from "../../pages/PFPSelector"
 import Fun from "../../pages/Discover"
 import Checkout from "../../pages/Checkout"
@@ -49,6 +50,14 @@ export const ProfileSetupNavigator = () => (
       component={Login}
       options={() => ({
         title: "Login",
+        headerShown: false,
+      })}
+    />
+    <Stack.Screen
+      name="Welcome"
+      component={Welcome}
+      options={() => ({
+        title: "Welcome",
         headerShown: false,
       })}
     />

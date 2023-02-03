@@ -24,6 +24,7 @@ const images = {
   bruh: require("../../assets/images/bruh.png"),
   slider: require("../../assets/images/Slider.png"),
   add_filled: require("../../assets/images/carbon_add-filled.png"),
+  welcome: require("../../assets/images/welcome.png"),
 }
 
 // image preloading
