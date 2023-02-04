@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 25,
   },
   smalltext: {
     fontSize: 20,
@@ -68,48 +68,22 @@ const HorizontalLine = () => (
 
 const PFPSelector = ({ route, navigation }) => {
   const [selected, setSelected] = React.useState(null)
-  const { username } = route.params
+  const { username, email } = route.params
   return (
     <View style={styles.root}>
-      <View style={{ height: "20%", width: "86%" }}>
-        <Text
-          style={[
-            styles.bigtitle,
-            { flexDirection: "row", alignItems: "flex-start" },
-          ]}
-        >
-          Hi, <Text style={{ color: colors.lightBlue }}>{username}</Text>
-        </Text>
-        <Text
-          style={[
-            styles.title,
-            { flexDirection: "row", alignItems: "flex-start" },
-          ]}
-        >
-          Welcome to <Text style={{ fontWeight: "bold" }}>NOMS.</Text>
-        </Text>
-      </View>
-      <HorizontalLine />
-      <View style={{ height: "10%" }}>
-        <Text style={styles.subtitle}>
-          Let&apos;s set up a few things before you get NOMming! To get started,
-          first...
-        </Text>
-      </View>
-      <HorizontalLine />
       <Text
         style={[
-          styles.smalltext,
+          styles.subtitle,
           {
             width: "86%",
             flexDirection: "row",
             fontWeight: "bold",
-            fontStyle: "italic",
-            alignItems: "flex-start",
+            alignItems: "center",
+            textAlign: "center"
           },
         ]}
       >
-        Choose a profile picture:
+        Choose a profile picture!
       </Text>
       <View style={{ height: "35%" }}>
         <View style={styles.container}>
@@ -167,7 +141,13 @@ const PFPSelector = ({ route, navigation }) => {
           borderWidth={1}
           borderRadius={20}
           onPress={() => {
-            navigation.navigate("CreateAccount", { pfp: selected }) // temporarily pass profile image by props
+            if (selected !== null) {
+              navigation.navigate("CreateAccount", {
+                username,
+                email,
+                pfp: selected,
+              }) // temporarily pass profile image by props
+            }
           }}
         />
       </View>

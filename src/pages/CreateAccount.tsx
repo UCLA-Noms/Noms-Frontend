@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {
-  StyleSheet, View, Text, Button, TextInput,
+  StyleSheet, View, Text, TextInput,
 } from "react-native"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
+import Button from "../components/Button"
 import { colors } from "../theme"
 import PFP from "../components/PFP"
 
@@ -69,7 +70,7 @@ const HorizontalLine = () => (
 )
 
 const CreateAccount = ({ route, navigation }) => {
-  const { pfp } = route.params
+  const { username, email, pfp } = route.params
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
@@ -92,10 +93,10 @@ const CreateAccount = ({ route, navigation }) => {
             { flexDirection: "row", alignItems: "flex-start" },
           ]}
         >
-          Jason Tay
+          {username}
         </Text>
         <View style={{ height: "10%" }}>
-          <Text style={styles.subtitle}>email@g.ucla.edu</Text>
+          <Text style={styles.subtitle}>{email}</Text>
         </View>
         <HorizontalLine />
         <Text
@@ -129,16 +130,18 @@ const CreateAccount = ({ route, navigation }) => {
           style={{
             color: "black",
             width: "70%",
-            height: "5%",
-            textAlignVertical: "top",
-            marginTop: "5%",
-            padding: "6%",
+            height: 50,
+            // marginTop: "5%",
+            // padding: "6%",
             borderColor: colors.lightBlue,
+            padding: 10,
             borderWidth: 2,
             borderRadius: 5,
+            margin: 10,
           }}
           // value={caption}
           // onChangeText={(text) => setCaption(text)}
+          keyboardType="numeric"
           placeholder="E.g. 9497382002"
           placeholderTextColor="black"
         />

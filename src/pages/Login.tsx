@@ -102,7 +102,10 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (userInfo) {
-      navigation.navigate("PFPSelector", { username: userInfo.name }) // temporarily pass username as prop
+      navigation.navigate("Welcome", {
+        username: userInfo.name,
+        email: userInfo.email,
+      }) // temporarily pass username as prop
     }
   }, [userInfo])
 
