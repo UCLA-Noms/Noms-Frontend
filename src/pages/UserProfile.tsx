@@ -131,7 +131,7 @@ const Me = ({ navigation }) => (
       color="black"
       backgroundColor={colors.white}
       onPress={() => {
-        navigation.navigate("Details", { from: "Me" })
+        navigation.navigate("Notifications", { from: "Me" })
       }}
       textStyle={{ fontSize: 20 }}
       style={{ display: "flex", flexDirection: "row", marginBottom: 20 }}

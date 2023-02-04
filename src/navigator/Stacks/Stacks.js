@@ -16,6 +16,7 @@ import Home from "../../pages/Home"
 import CreateAccount from "../../pages/CreateAccount"
 import Restaurant from "../../pages/Restaurant"
 import OrderHistory from "../../pages/OrderHistory"
+import NotificationsPage from "../../pages/NotificationsPage"
 
 // ------------------------------------
 // Constants
@@ -190,6 +191,15 @@ export const MeNavigator = () => (
       component={Me}
       options={({ navigation }) => ({
         title: "Me",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    <Stack.Screen
+      name="Notifications"
+      component={NotificationsPage}
+      options={({ navigation }) => ({
+        title: "Notifications",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
