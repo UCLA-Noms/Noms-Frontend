@@ -26,30 +26,30 @@ const ordersSlice = createSlice({
       return state
     },
     increment(state, { payload }) {
-      const item = state.cart.items.find(i => i.id === payload)
+      const item = state.cart.items.find((i) => i.id === payload)
       item.quantity += 1
       state.cart.total += item.price
       return state
     },
     decrement(state, { payload }) {
-      const item = state.cart.items.find(item => item.id === payload)
+      const item = state.cart.items.find((item) => item.id === payload)
       item.quantity -= 1
       state.cart.total -= item.price
       if (item.quantity === 0) {
-        state.cart.items = state.cart.items.filter(i => i.id !== item.id)
+        state.cart.items = state.cart.items.filter((i) => i.id !== item.id)
       }
       return state
     },
     remove(state, { payload }) {
-      const item = state.cart.items.find(item => item.id === payload)
+      const item = state.cart.items.find((item) => item.id === payload)
       state.cart.total -= item.price * item.quantity
-      state.cart.items = state.cart.items.filter(i => i.id !== item.id)
+      state.cart.items = state.cart.items.filter((i) => i.id !== item.id)
       return state
     },
     append(state, { payload }) {
       payload.id = payload.itemId
       delete payload.itemId
-      const item = state.cart.items.find(item => item.id === payload.id)
+      const item = state.cart.items.find((item) => item.id === payload.id)
       if (item) {
         item.quantity += 1
         state.cart.total += item.price
@@ -72,7 +72,6 @@ const ordersSlice = createSlice({
 
 export const { action } = ordersSlice
 
-export const {
-  empty, increment, decrement, remove, append,
-} = ordersSlice.actions
+export const { empty, increment, decrement, remove, append } =
+  ordersSlice.actions
 export default ordersSlice.reducer
