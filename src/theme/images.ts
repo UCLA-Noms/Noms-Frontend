@@ -8,6 +8,7 @@ const images = {
   order: require("../../assets/images/order.png"),
   fun: require("../../assets/images/fun.png"),
   me: require("../../assets/images/me.png"),
+  food: require("../../assets/images/food.png"),
   pfp1: require("../../assets/images/pfp/pfp1.png"),
   pfp2: require("../../assets/images/pfp/pfp2.png"),
   pfp3: require("../../assets/images/pfp/pfp3.png"),
@@ -29,8 +30,6 @@ const images = {
 }
 
 // image preloading
-export const imageAssets = Object.keys(images).map((key) =>
-  Asset.fromModule(images[key]).downloadAsync(),
-)
+export const imageAssets = Object.keys(images).map(key => Asset.fromModule(images[key]).downloadAsync())
 
 export default images

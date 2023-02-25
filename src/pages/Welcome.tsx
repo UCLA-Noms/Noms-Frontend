@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StyleSheet, Text, View, Image, ImageBackground } from "react-native"
+import {
+  StyleSheet, Text, View, Image, ImageBackground,
+} from "react-native"
 import { colors, images } from "../theme"
 import Button from "../components/Button"
 
