@@ -89,7 +89,7 @@ export const ProfileSetupNavigator = () => (
   </Stack.Navigator>
 )
 
-export const RestuarantNavigator = () => (
+export const RestaurantNavigator = () => (
   <Stack.Navigator
     initialRouteName="Home"
     headerMode="screen"

@@ -10,7 +10,7 @@ import {
   MeNavigator,
   ProfileSetupNavigator,
 } from "../Stacks"
-import { FunNavigator, RestuarantNavigator } from "../Stacks/Stacks"
+import { FunNavigator, RestaurantNavigator } from "../Stacks/Stacks"
 
 const Tab = createBottomTabNavigator()
 
@@ -20,36 +20,36 @@ const TabNavigator = () => (
       // eslint-disable-next-line react/prop-types
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
-        case "Home":
-          return (
-            <Image
-              source={images.home}
-              color={focused ? colors.lightPurple : colors.gray}
-            />
-          )
-        case "Order":
-          return (
-            <Image
-              source={images.order}
-              color={focused ? colors.lightPurple : colors.gray}
-            />
-          )
-        case "Me":
-          return (
-            <Image
-              source={images.fun}
-              color={focused ? colors.lightPurple : colors.gray}
-            />
-          )
-        case "Fun":
-          return (
-            <Image
-              source={images.me}
-              color={focused ? colors.lightPurple : colors.gray}
-            />
-          )
-        default:
-          return <View />
+          case "Home":
+            return (
+              <Image
+                source={images.home}
+                color={focused ? colors.lightPurple : colors.gray}
+              />
+            )
+          case "Order":
+            return (
+              <Image
+                source={images.order}
+                color={focused ? colors.lightPurple : colors.gray}
+              />
+            )
+          case "Me":
+            return (
+              <Image
+                source={images.fun}
+                color={focused ? colors.lightPurple : colors.gray}
+              />
+            )
+          case "Fun":
+            return (
+              <Image
+                source={images.me}
+                color={focused ? colors.lightPurple : colors.gray}
+              />
+            )
+          default:
+            return <View />
         }
       },
     })}
@@ -80,12 +80,12 @@ const TabNavigator = () => (
     <Tab.Screen name="Fun" component={FunNavigator} />
     <Tab.Screen name="Me" component={MeNavigator} />
     <Tab.Screen
-      name="Restuarant"
+      name="Restaurant"
       options={{
         tabBarButton: () => null,
         tabBarVisible: false,
       }}
-      component={RestuarantNavigator}
+      component={RestaurantNavigator}
     />
   </Tab.Navigator>
 )

@@ -1,17 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import {
-  TouchableOpacity, Text, Image, View,
-} from "react-native"
+import React, { useEffect, useState } from "react"
+import PropTypes, { func } from "prop-types"
+import { TouchableOpacity, Text, Image, View } from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { images } from "../theme"
+import { useNavigation } from "@react-navigation/core"
 
 const styles = EStyleSheet.create({
   restaurantName: {
     // textAlign: 'center',
-    fontSize: "2rem",
-    fontWeight: "bold",
-    marginTop: "0.25rem",
+    fontSize: "1.25rem",
+    marginTop: "0.125rem",
   },
   restaurantInfo: {
     fontSize: "1rem",
@@ -50,18 +48,20 @@ const RestaurantCard = ({
   rating,
   distance,
   image,
+  restaurant,
+  onPress,
 }) => {
   const cardStyle = [styles.card]
   const nameStyle = [styles.restaurantName]
   const infoStyle = [styles.infoStyle]
   const sideInfoStyle = { ...styles.infoStyle, ...styles.bubbleInfo }
+
   return (
     <TouchableOpacity
       style={cardStyle}
       delayPressIn={250}
-      onPress={() => {
-        navigation.navigate("Restuarant", { from: "Fun" })
-      }}
+      navigation={navigation}
+      onPress={onPress}
     >
       <Image style={styles.image} source={images[image]} />
       <View
@@ -75,9 +75,7 @@ const RestaurantCard = ({
       >
         <View style={{ flex: 1 }}>
           {closingTime && (
-            <Text style={infoStyle}>
-              Order by {`${closingTime.getHours()}:${closingTime.getMinutes()}`}
-            </Text>
+            <Text style={infoStyle}>Orders until {closingTime}</Text>
           )}
           {restaurantName && <Text style={nameStyle}>{restaurantName}</Text>}
         </View>
@@ -108,7 +106,7 @@ const RestaurantCard = ({
           </View>
 
           <View style={{ display: "flex", flexDirection: "row" }}>
-            {distance && <Text style={sideInfoStyle}>{distance} mi</Text>}
+            {distance && <Text style={sideInfoStyle}>{distance} •</Text>}
             {rating && <Text style={sideInfoStyle}>{rating} ★</Text>}
           </View>
         </View>
@@ -129,11 +127,12 @@ RestaurantCard.propTypes = {
   // textStyle: PropTypes.shape({}),
   // style: PropTypes.shape({}),
   restaurantName: PropTypes.string,
-  closingTime: PropTypes.instanceOf(Date),
+  closingTime: PropTypes.string,
   price: PropTypes.number,
   liked: PropTypes.bool,
   rating: PropTypes.number,
   distance: PropTypes.number,
+  restaurant: PropTypes.shape({}),
 }
 
 RestaurantCard.defaultProps = {
@@ -147,7 +146,7 @@ RestaurantCard.defaultProps = {
   // textStyle: {},
   // style: {},
   restaurantName: "",
-  closingTime: new Date(),
+  closingTime: "",
   price: 0,
   liked: false,
   rating: 0,
