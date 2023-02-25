@@ -176,7 +176,7 @@ const Food = ({ navigation }) => {
           >
             {/* eslint-disable-next-line */}
             <Text style={{ marginRight: 5 }}>{"📍"}</Text>
-            <TextInput defaultValue="UCLA" style={{}}></TextInput>
+            <TextInput defaultValue="UCLA" style={{}} />
             {/* <Text style={{ fontSize: 16 }}>{"📍"} UCLA</Text> */}
           </View>
         </View>
@@ -205,10 +205,9 @@ const Food = ({ navigation }) => {
               ) /* TODO: search every time query in searchbar is changed? */
             }}
             onSubmitEditing={
-              () =>
-                search(
-                  searchText,
-                ) /* TODO: search only when user submits search query? */
+              () => search(
+                searchText,
+              ) /* TODO: search only when user submits search query? */
             }
             value={searchText}
             placeholder="search..."
@@ -221,7 +220,7 @@ const Food = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        {items.map((item) => (item.visible ? <FoodItem {...item} /> : null))}
+        {items.map(item => (item.visible ? <FoodItem {...item} /> : null))}
       </ScrollView>
     </SafeAreaView>
   )
