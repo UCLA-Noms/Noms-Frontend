@@ -17,12 +17,12 @@ const images = {
   bag: require("../../assets/images/bag.png"),
   timer1: require("../../assets/images/timer1.png"),
   clock: require("../../assets/images/clock.png"),
-  rListing1: require("../../assets/images/rListing1.png"),
-  rListing2: require("../../assets/images/rListing2.png"),
-  rListing3: require("../../assets/images/rListing3.png"),
-  rListing4: require("../../assets/images/rListing4.png"),
   bruh: require("../../assets/images/bruh.png"),
   add_filled: require("../../assets/images/carbon_add-filled.png"),
+  lePainQuotidien: require("../../assets/images/restaurants/lePainQuotidien.png"),
+  rListing1: require("../../assets/images/restaurants/rListing1.png"),
+  drey: require("../../assets/images/restaurants/drey.png"),
+  eggTuck: require("../../assets/images/restaurants/eggTuck.png"),
 }
 
 // image preloading

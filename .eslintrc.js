@@ -23,6 +23,8 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
     semi: [2, "never"],
     quotes: [2, "double"],
     "react/jsx-filename-extension": "off",

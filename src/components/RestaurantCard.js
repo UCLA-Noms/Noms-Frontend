@@ -50,6 +50,7 @@ const RestaurantCard = ({
   rating,
   distance,
   image,
+  restaurant,
 }) => {
   const cardStyle = [styles.card]
   const nameStyle = [styles.restaurantName]
@@ -60,7 +61,7 @@ const RestaurantCard = ({
       style={cardStyle}
       delayPressIn={250}
       onPress={() => {
-        navigation.navigate("Restuarant", { from: "Fun" })
+        navigation.navigate("Restuarant", { from: "Fun", restaurant })
       }}
     >
       <Image style={styles.image} source={images[image]} />
@@ -133,7 +134,8 @@ RestaurantCard.propTypes = {
   price: PropTypes.number,
   liked: PropTypes.bool,
   rating: PropTypes.number,
-  distance: PropTypes.number,
+  distance: PropTypes.string,
+  restaurant: PropTypes.shape({}),
 }
 
 RestaurantCard.defaultProps = {
@@ -151,7 +153,7 @@ RestaurantCard.defaultProps = {
   price: 0,
   liked: false,
   rating: 0,
-  distance: 0,
+  distance: "5 mi",
 }
 
 export default RestaurantCard

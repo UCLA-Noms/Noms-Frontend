@@ -31,9 +31,11 @@ const RestaurantItem = ({
   // onPress,
   imageUrl,
   navigation,
+  setModal,
 }) => {
   const dispatch = useDispatch()
   const orders = useSelector(state => state.orders)
+
   return (
     <View
       style={{
@@ -114,7 +116,18 @@ const RestaurantItem = ({
                         image: imageUrl,
                       }),
                     )
-                    navigation.navigate("Order")
+                    // navigation.navigate("Order")
+                    // Open a modal
+                    setModal({
+                      visible: true,
+                      item: {
+                        itemId,
+                        name: title,
+                        price,
+                        quantity: 1,
+                        image: imageUrl,
+                      },
+                    })
                   }}
                   style={{ color: "white" }}
                 >
