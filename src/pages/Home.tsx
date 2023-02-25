@@ -1,7 +1,14 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import {
-  StyleSheet, StatusBar, SafeAreaView, Image, TextInput, View, Button, TouchableOpacity,
+  StyleSheet,
+  StatusBar,
+  SafeAreaView,
+  Image,
+  TextInput,
+  View,
+  Button,
+  TouchableOpacity,
 } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { vw } from "react-native-expo-viewport-units"
@@ -31,7 +38,8 @@ const Home = ({ navigation }) => {
     { name: "Restaurant 4", visible: true },
   ])
 
-  const search = (query) => { // TEMPORARY: searches for occurrence(s) of query in restaurant names
+  const search = (query) => {
+    // TEMPORARY: searches for occurrence(s) of query in restaurant names
     const newVisible = [...restaurants]
     const re = new RegExp(query, "i") // case insensitive
     for (let i = 0; i < restaurants.length; i += 1) {
@@ -51,25 +59,47 @@ const Home = ({ navigation }) => {
         {/* <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} /> */}
         <View
           style={{
-            flex: 1, borderRadius: 10, padding: 10, margin: 20, borderWidth: 1, flexDirection: "row", justifyContent: "space-between",
+            flex: 1,
+            borderRadius: 10,
+            padding: 10,
+            margin: 20,
+            borderWidth: 1,
+            flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
           <TextInput
             style={{
-              flexGrow: 1, width: "80%", height: "100%", fontSize: 20,
+              flexGrow: 1,
+              width: "80%",
+              height: "100%",
+              fontSize: 20,
             }}
-            onChangeText={(text) => { setSearch(text); search(text) /* TODO: search every time query in searchbar is changed? */ }}
-            onSubmitEditing={() => search(searchText) /* TODO: search only when user submits search query? */}
+            onChangeText={(text) => {
+              setSearch(text)
+              search(
+                text,
+              ) /* TODO: search every time query in searchbar is changed? */
+            }}
+            onSubmitEditing={
+              () =>
+                search(
+                  searchText,
+                ) /* TODO: search only when user submits search query? */
+            }
             value={searchText}
             placeholder="Search Bar"
           />
           {/* <Button title={'test'} /> */}
           <TouchableOpacity>
-            <Image source={images.slider} style={{ height: "100%", width: undefined, aspectRatio: 1 }} />
+            <Image
+              source={images.slider}
+              style={{ height: "100%", width: undefined, aspectRatio: 1 }}
+            />
           </TouchableOpacity>
         </View>
-        {restaurants.map(rest => (rest.visible
-          ? (
+        {restaurants.map((rest) =>
+          rest.visible ? (
             <RestaurantCard
               restaurantName={rest.name}
               closingTime={new Date()}
@@ -80,8 +110,8 @@ const Home = ({ navigation }) => {
               navigation={navigation}
               image="rListing4"
             />
-          ) : null
-        ))}
+          ) : null,
+        )}
       </ScrollView>
     </SafeAreaView>
   )

@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar, Image,
-} from "react-native"
+import { StyleSheet, Text, View, StatusBar, Image } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { colors, images } from "../theme"
 import Button from "../components/Button"
