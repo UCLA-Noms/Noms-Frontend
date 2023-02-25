@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { getDefaultConfig } = require("@expo/metro-config")
+import { getDefaultConfig } from "@expo/metro-config"
 
 module.exports = (async () => {
   const {
@@ -10,7 +10,7 @@ module.exports = (async () => {
       babelTransformerPath: require.resolve("react-native-svg-transformer"),
     },
     resolver: {
-      assetExts: assetExts.filter(ext => ext !== "svg"),
+      assetExts: [...assetExts.filter(ext => ext !== "svg"), "cjs"],
       sourceExts: [...sourceExts, "svg"],
     },
   }
