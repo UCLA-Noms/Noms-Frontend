@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-  StyleSheet, Text, View, StatusBar,
-} from "react-native"
+import { StyleSheet, Text, View, StatusBar } from "react-native"
 import { colors } from "../theme"
 import OrderHistoryItem from "../components/OrderHistoryItem"
 import Button from "../components/Button"
@@ -54,7 +52,7 @@ const OrderHistory = ({ route, navigation }) => (
       backgroundColor={colors.pink}
       onPress={navigation.goBack}
     />
-    {orderHistory.map(order => (
+    {orderHistory.map((order) => (
       <OrderHistoryItem key={order.number} order={order} />
     ))}
   </View>

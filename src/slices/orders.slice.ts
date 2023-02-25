@@ -5,14 +5,14 @@ const initialState = {
   cart: {
     items: [
       {
-        id: 1,
+        id: 900,
         name: "Burger",
-        price: 5,
+        price: 4.99,
         quantity: 1,
         image: "https://picsum.photos/200/300",
       },
     ],
-    total: 5,
+    total: 4.99,
   },
 }
 
@@ -46,6 +46,19 @@ const ordersSlice = createSlice({
       state.cart.items = state.cart.items.filter(i => i.id !== item.id)
       return state
     },
+    append(state, { payload }) {
+      payload.id = payload.itemId
+      delete payload.itemId
+      const item = state.cart.items.find(item => item.id === payload.id)
+      if (item) {
+        item.quantity += 1
+        state.cart.total += item.price
+      } else {
+        state.cart.items.push(payload)
+        state.cart.total += payload.price
+      }
+      return state
+    },
     default(state) {
       // Update total
       state.cart.total = state.cart.items.reduce(
@@ -60,6 +73,6 @@ const ordersSlice = createSlice({
 export const { action } = ordersSlice
 
 export const {
-  empty, increment, decrement, remove,
+  empty, increment, decrement, remove, append,
 } = ordersSlice.actions
 export default ordersSlice.reducer

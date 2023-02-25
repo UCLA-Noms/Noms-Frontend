@@ -18,7 +18,7 @@ const styles = EStyleSheet.create({
     // fontWeight: 'bold',
   },
   bubbleInfo: {
-    padding: "0.5rem",
+    // padding: "0.5rem",
     borderRadius: "0.5rem",
   },
   priceBubble: {

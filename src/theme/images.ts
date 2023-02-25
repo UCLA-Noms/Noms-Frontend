@@ -25,10 +25,12 @@ const images = {
   slider: require("../../assets/images/Slider.png"),
   add_filled: require("../../assets/images/carbon_add-filled.png"),
   welcome: require("../../assets/images/welcome.png"),
-  ellipse: require("../../assets/images/EllipseBackground.png")
+  ellipse: require("../../assets/images/EllipseBackground.png"),
 }
 
 // image preloading
-export const imageAssets = Object.keys(images).map(key => Asset.fromModule(images[key]).downloadAsync())
+export const imageAssets = Object.keys(images).map((key) =>
+  Asset.fromModule(images[key]).downloadAsync(),
+)
 
 export default images

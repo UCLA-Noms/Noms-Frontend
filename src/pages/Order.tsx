@@ -70,7 +70,7 @@ const Order = ({ navigation }) => {
           onRemove={onRemove}
         />
       ))}
-      <Text style={styles.total}>Total: ${total}</Text>
+      <Text style={styles.total}>Total: ${total.toFixed(2)}</Text>
       <View>
         <Button style={styles.button} title="Empty Cart" onPress={onEmpty} />
         <Button
