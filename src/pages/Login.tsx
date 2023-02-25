@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 WebBrowser.maybeCompleteAuthSession()
 
 const Login = ({ navigation }) => {
-  const { loggedIn } = useSelector(state => state.app)
+  const { loggedIn } = useSelector((state) => state.app)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -102,7 +102,10 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (userInfo) {
-      navigation.navigate("PFPSelector", { username: userInfo.name }) // temporarily pass username as prop
+      navigation.navigate("Welcome", {
+        username: userInfo.name,
+        email: userInfo.email,
+      }) // temporarily pass username as prop
     }
   }, [userInfo])
 
@@ -130,8 +133,8 @@ const Login = ({ navigation }) => {
         onPress={
           !accessToken
             ? () => {
-              login({ useProxy: true })
-            }
+                login({ useProxy: true })
+              }
             : logout
         }
       />

@@ -8,6 +8,7 @@ import Order from "../../pages/Order"
 import Me from "../../pages/UserProfile"
 import Logo from "../../pages/Logo"
 import Login from "../../pages/Login"
+import Welcome from "../../pages/Welcome"
 import PFPSelector from "../../pages/PFPSelector"
 import Fun from "../../pages/Discover"
 import Checkout from "../../pages/Checkout"
@@ -15,6 +16,8 @@ import DietaryRestrictions from "../../pages/DietaryRestrictions"
 import Home from "../../pages/Home"
 import CreateAccount from "../../pages/CreateAccount"
 import Restaurant from "../../pages/Restaurant"
+import OrderHistory from "../../pages/OrderHistory"
+import NotificationsPage from "../../pages/NotificationsPage"
 
 // ------------------------------------
 // Constants
@@ -48,6 +51,14 @@ export const ProfileSetupNavigator = () => (
       component={Login}
       options={() => ({
         title: "Login",
+        headerShown: false,
+      })}
+    />
+    <Stack.Screen
+      name="Welcome"
+      component={Welcome}
+      options={() => ({
+        title: "Welcome",
         headerShown: false,
       })}
     />
@@ -116,6 +127,13 @@ export const HomeNavigator = () => (
       component={Details}
       options={{
         title: "Details",
+      }}
+    />
+    <Stack.Screen
+      name="Order History"
+      component={OrderHistory}
+      options={{
+        title: "Order History",
       }}
     />
   </Stack.Navigator>
@@ -187,10 +205,26 @@ export const MeNavigator = () => (
       })}
     />
     <Stack.Screen
+      name="Notifications"
+      component={NotificationsPage}
+      options={({ navigation }) => ({
+        title: "Notifications",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    <Stack.Screen
       name="Details"
       component={Details}
       options={{
         title: "Details",
+      }}
+    />
+    <Stack.Screen
+      name="Order History"
+      component={OrderHistory}
+      options={{
+        title: "Order History",
       }}
     />
   </Stack.Navigator>
