@@ -79,7 +79,7 @@ const PFPSelector = ({ route, navigation }) => {
             flexDirection: "row",
             fontWeight: "bold",
             alignItems: "center",
-            textAlign: "center"
+            textAlign: "center",
           },
         ]}
       >
