@@ -10,7 +10,7 @@ const Navigator = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(authenticate({ loggedIn: false, checked: true }))
+    dispatch(authenticate({ loggedIn: true, checked: true }))
   }, [])
   console.log("[##] loggedIn", loggedIn)
 

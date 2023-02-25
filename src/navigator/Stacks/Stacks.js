@@ -18,6 +18,7 @@ import CreateAccount from "../../pages/CreateAccount"
 import Restaurant from "../../pages/Restaurant"
 import OrderHistory from "../../pages/OrderHistory"
 import NotificationsPage from "../../pages/NotificationsPage"
+import Food from "../../pages/Food"
 
 // ------------------------------------
 // Constants
@@ -136,6 +137,38 @@ export const HomeNavigator = () => (
         title: "Order History",
       }}
     />
+  </Stack.Navigator>
+)
+
+export const FoodNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="Food"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+    <Stack.Screen
+      name="Food"
+      component={Food} // here is where things are being tested
+      options={({ navigation }) => ({
+        title: "Food",
+        headerLeft: () => <HeaderLeft navigation={navigation} />,
+        headerTitle: () => <HeaderTitle />,
+      })}
+    />
+    {/* <Stack.Screen
+      name="Details"
+      component={Details}
+      options={{
+        title: "Details",
+      }}
+    />
+    <Stack.Screen
+      name="Order History"
+      component={OrderHistory}
+      options={{
+        title: "Order History",
+      }}
+    /> */}
   </Stack.Navigator>
 )
 
