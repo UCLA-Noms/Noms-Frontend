@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import PropTypes, { func } from "prop-types"
-import {
-  TouchableOpacity, Text, Image, View,
-} from "react-native"
+import { TouchableOpacity, Text, Image, View } from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { images } from "../theme"
 
@@ -61,10 +59,7 @@ const RestaurantCard = ({
       style={cardStyle}
       delayPressIn={250}
       onPress={() => {
-        // console.log(navigation, restaurantr)
-        console.log("HELLO!")
         if (restaurant) {
-          console.log("in if", restaurant)
           navigation.navigate("Restaurant", { restaurant })
         }
       }}
@@ -118,7 +113,7 @@ const RestaurantCard = ({
         </View>
       </View>
       {/* {children} */}
-    </TouchableOpacity >
+    </TouchableOpacity>
   )
 }
 
