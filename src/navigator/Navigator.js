@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Text } from "react-native"
 import { authenticate } from "../slices/app.slice"
 import TabNavigator from "./Tabs"
-import { useAuthentication } from "../backend/useAuth"
+import useAuthentication from "../backend/useAuth"
 import { ProfileSetupNavigator } from "./Stacks"
 
 const Navigator = () => {

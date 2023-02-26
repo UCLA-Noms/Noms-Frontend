@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react"
 import { Image, View } from "react-native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { colors, images } from "../../theme"
-import { auth } from "../../backend/FirebaseConfig"
-import { useAuthentication } from "../../backend/useAuth"
 
 // stack navigators
 import {
