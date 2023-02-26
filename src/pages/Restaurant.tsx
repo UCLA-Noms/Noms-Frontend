@@ -1,9 +1,7 @@
-import React, {useEffect} from "react"
-import { useRoute } from "@react-navigation/core"
+import React, { useEffect } from "react"
+import { useNavigation, useRoute } from "@react-navigation/core"
 import PropTypes from "prop-types"
-import {
-  Text, View, StatusBar, Image, SafeAreaView,
-} from "react-native"
+import { Text, View, StatusBar, Image, SafeAreaView } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { vw } from "react-native-expo-viewport-units"
@@ -77,17 +75,20 @@ const styles = EStyleSheet.create({
   },
 })
 
-const Restaurant = ({route, navigation}) => 
-{
+const Restaurant = (bruh) => {
+  // const navigation = useNavigation()
+  // const route = useRoute()
+  // const { params } = route
 
   // const route = useRoute()
   // const { params } = route.params
 
   useEffect(() => {
-  console.log("Restaurant: ", {route})
-  }, [route])
+    console.log("Why have you forsaken me, my lord?", bruh)
+    // console.log(navigation.getParent().getState().routes)
+    // console.log("Restaurant: ", route)
+  }, [bruh])
   // const bruh = route?.params?.bruh
-
 
   // const { navigate } = navigation
 
@@ -99,7 +100,6 @@ const Restaurant = ({route, navigation}) =>
     </SafeAreaView>
   )
 }
-
 
 // Restaurant.propTypes = {
 //   navigation: PropTypes.shape({

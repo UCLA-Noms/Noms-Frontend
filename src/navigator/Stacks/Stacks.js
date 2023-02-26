@@ -86,15 +86,6 @@ export const ProfileSetupNavigator = () => (
         headerShown: false,
       })}
     />
-  </Stack.Navigator>
-)
-
-export const RestaurantNavigator = () => (
-  <Stack.Navigator
-    initialRouteName="Home"
-    headerMode="screen"
-    screenOptions={navigationProps}
-  >
     <Stack.Screen
       name="Restaurant"
       component={Restaurant} // here is where things are being tested
@@ -102,10 +93,21 @@ export const RestaurantNavigator = () => (
         title: "Restaurant",
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
+
       })}
     />
   </Stack.Navigator>
 )
+
+// export const RestaurantNavigator = () => (
+//   <Stack.Navigator
+//     initialRouteName="Home"
+//     headerMode="screen"
+//     screenOptions={navigationProps}
+//   >
+
+//   </Stack.Navigator>
+// )
 
 export const HomeNavigator = () => (
   <Stack.Navigator

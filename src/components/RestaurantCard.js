@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import PropTypes, { func } from "prop-types"
-import { TouchableOpacity, Text, Image, View } from "react-native"
+import {
+  TouchableOpacity, Text, Image, View,
+} from "react-native"
 import EStyleSheet from "react-native-extended-stylesheet"
 import { images } from "../theme"
-import { useNavigation } from "@react-navigation/core"
 
 const styles = EStyleSheet.create({
   restaurantName: {
@@ -49,7 +50,6 @@ const RestaurantCard = ({
   distance,
   image,
   restaurant,
-  onPress,
 }) => {
   const cardStyle = [styles.card]
   const nameStyle = [styles.restaurantName]
@@ -60,8 +60,14 @@ const RestaurantCard = ({
     <TouchableOpacity
       style={cardStyle}
       delayPressIn={250}
-      navigation={navigation}
-      onPress={onPress}
+      onPress={() => {
+        // console.log(navigation, restaurantr)
+        console.log("HELLO!")
+        if (restaurant) {
+          console.log("in if", restaurant)
+          navigation.navigate("Restaurant", { restaurant })
+        }
+      }}
     >
       <Image style={styles.image} source={images[image]} />
       <View
@@ -112,7 +118,7 @@ const RestaurantCard = ({
         </View>
       </View>
       {/* {children} */}
-    </TouchableOpacity>
+    </TouchableOpacity >
   )
 }
 

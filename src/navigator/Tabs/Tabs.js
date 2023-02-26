@@ -79,14 +79,14 @@ const TabNavigator = () => (
     <Tab.Screen name="Order" component={OrderNavigator} />
     <Tab.Screen name="Fun" component={FunNavigator} />
     <Tab.Screen name="Me" component={MeNavigator} />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="Restaurant"
       options={{
         tabBarButton: () => null,
         tabBarVisible: false,
       }}
       component={RestaurantNavigator}
-    />
+    /> */}
   </Tab.Navigator>
 )
 

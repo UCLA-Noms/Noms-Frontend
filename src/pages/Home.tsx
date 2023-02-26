@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
-  header:{
+  header: {
     width: "100%",
   },
   topHalf: {
@@ -385,7 +385,6 @@ const Home = ({ navigation }) => {
   )
 
   const [uclaVisible, setUclaVisible] = React.useState(false)
-  
 
   const search = (query) => {
     // TEMPORARY: searches for occurrence(s) of query in restaurant names
@@ -400,7 +399,6 @@ const Home = ({ navigation }) => {
     }
     setRestaurantsState(newVisible)
   }
-
 
   return (
     <SafeAreaView style={styles.root}>
@@ -426,8 +424,8 @@ const Home = ({ navigation }) => {
                 console.log("Pressed <3")
               }}
             />
-            </View>
-            <TextInput
+          </View>
+          <TextInput
             style={styles.searchBar}
             onChangeText={(text) => {
               setSearch(text)
@@ -445,86 +443,88 @@ const Home = ({ navigation }) => {
             placeholder="Search :)"
           />
           {/* Add Tabs */}
-          <View style={{
-            flexDirection: "row",
-          }}>
-                <Button 
-                    style={{
-                    width: vw(50),
-                    }} 
-                    title="Westwood" onPress={() => setUclaVisible(false)} />
-                <Button 
-                    style={{
-                        width: vw(50),
-                    }}
-                    title="UCLA" onPress={() => setUclaVisible(true)} />
-          </View>
-    
-          <ScrollView style={
-            uclaVisible ? { display: "none" } : { display: "flex",  height: vh(70)}
-        }>
-        {/* <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} /> */}
-
-
-        {restaurantsState.map((restaurant, index) => 
-           restaurant.visible? (<RestaurantCard
-              key={index}
-              restaurantName={restaurant.name}
-              closingTime={restaurant.closingTime}
-              rating={restaurant.rating}
-              price={restaurant.price}
-              distance={restaurant.distance}
-              liked={restaurant.liked}
-              navigation={navigation}
-              image={restaurant.image}
-              restaurant={restaurant}
-              onPress={() => {
-                navigation.navigate("Restaurant", {
-                  restaurant,
-                })
+          <View
+            style={{
+              flexDirection: "row",
+            }}
+          >
+            <Button
+              style={{
+                width: vw(50),
               }}
-            />)
-            : null)}
-          </ScrollView>
-      
-
-          <ScrollView style={
-            uclaVisible ? { display: "flex" } : { display: "none" }
-        }>
-        {/* <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} /> */}
-
-        {restaurantsState.map((rest) =>
-          rest.visible ? (
-            <RestaurantCard
-              restaurantName={rest.name}
-              closingTime={`${new Date().getHours()}:${new Date().getMinutes()}`}
-              rating={2.3}
-              price={4}
-              distance={1.5}
-              liked={false}
-              navigation={navigation}
-              image="rListing4"
+              title="Westwood"
+              onPress={() => setUclaVisible(false)}
             />
-          ) : null,
-        )}
+            <Button
+              style={{
+                width: vw(50),
+              }}
+              title="UCLA"
+              onPress={() => setUclaVisible(true)}
+            />
+          </View>
+
+          <ScrollView
+            style={
+              uclaVisible
+                ? { display: "none" }
+                : { display: "flex", height: vh(70) }
+            }
+          >
+            {/* <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} /> */}
+
+            {restaurantsState.map((restaurant, index) =>
+              restaurant.visible ? (
+                <RestaurantCard
+                  key={index}
+                  restaurantName={restaurant.name}
+                  closingTime={restaurant.closingTime}
+                  rating={restaurant.rating}
+                  price={restaurant.price}
+                  distance={restaurant.distance}
+                  liked={restaurant.liked}
+                  navigation={navigation}
+                  image={restaurant.image}
+                  restaurant={restaurant}
+                />
+              ) : null,
+            )}
           </ScrollView>
 
-          
+          <ScrollView
+            style={uclaVisible ? { display: "flex" } : { display: "none" }}
+          >
+            {/* <Image style={{ width: vw(100), height: vw(30) }} source={images.bruh} /> */}
+
+            {restaurantsState.map((rest) =>
+              rest.visible ? (
+                <RestaurantCard
+                  restaurantName={rest.name}
+                  closingTime={`${new Date().getHours()}:${new Date().getMinutes()}`}
+                  rating={2.3}
+                  price={4}
+                  distance={1.5}
+                  liked={false}
+                  navigation={navigation}
+                  image="rListing4"
+                />
+              ) : null,
+            )}
+          </ScrollView>
         </View>
       </View>
-
     </SafeAreaView>
   )
 }
 
-Home.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func,
-  }),
-}
+// Home.propTypes = {
+//   navigation: PropTypes.shape({
+//     navigate: PropTypes.func,
+//   }),
+// }
 
-Home.defaultProps = {
-  navigation: { navigate: () => null },
-}
+// Home.defaultProps = {
+//   navigation: { navigate: () => null },
+// }
 
 export default Home
