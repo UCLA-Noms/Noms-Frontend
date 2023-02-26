@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Image, View } from "react-native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { colors, images } from "../../theme"
+import { auth } from "../../backend/FirebaseConfig"
+import { useAuthentication } from "../../backend/useAuth"
 
 // stack navigators
 import {
@@ -14,7 +16,7 @@ import { FunNavigator, RestuarantNavigator } from "../Stacks/Stacks"
 
 const Tab = createBottomTabNavigator()
 
-const TabNavigator = () => (
+const TabNavigator = props => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
       // eslint-disable-next-line react/prop-types
@@ -64,17 +66,17 @@ const TabNavigator = () => (
         // paddingTop: 5,
       },
     }}
-    initialRouteName="ProfileSetup"
+    initialRouteName="Home"
     swipeEnabled={false}
   >
-    <Tab.Screen
-      name="ProfileSetup"
-      options={{
-        tabBarButton: () => null,
-        tabBarVisible: false,
-      }}
-      component={ProfileSetupNavigator}
-    />
+    {/* <Tab.Screen
+        name="ProfileSetup"
+        options={{
+          tabBarButton: () => null,
+          tabBarVisible: false,
+        }}
+        component={ProfileSetupNavigator}
+      /> */}
     <Tab.Screen name="Home" component={HomeNavigator} />
     <Tab.Screen name="Order" component={OrderNavigator} />
     <Tab.Screen name="Fun" component={FunNavigator} />

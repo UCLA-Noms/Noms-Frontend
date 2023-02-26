@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StyleSheet, Text, View, StatusBar, Image } from "react-native"
+import Button from "../components/Button"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { colors, images } from "../theme"
-import Button from "../components/Button"
 import PFP from "../components/PFP"
 import DietaryRestrictionIcon from "../components/DietaryRestrictionIcon"
+import { logout } from "../backend/authfunctions"
 
 const styles = StyleSheet.create({
   root: {
@@ -136,6 +137,7 @@ const Me = ({ navigation }) => (
       textStyle={{ fontSize: 20 }}
       style={{ display: "flex", flexDirection: "row", marginBottom: 20 }}
     />
+    <Button onPress={logout} title="temp logout lol" />
   </View>
 )
 
