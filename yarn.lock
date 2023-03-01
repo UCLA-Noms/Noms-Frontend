@@ -3171,14 +3171,7 @@
     "@types/react" "*"
     "@types/react-native" "^0.70"
 
-"@types/react-native@^0.70":
-  version "0.70.9"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.70.9.tgz#7d9d11960a4ab78c874e77af895f83d2817aac96"
-  integrity sha512-0C6sIo13ztzM2llaWdTq0Vpscx3VdU0T8F45kEurWv3l5n+BHm/Mkr8Z+N29eXDYGhTvCz5y2jegB8JyiVa5kw==
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-native@~0.70.6":
+"@types/react-native@^0.70", "@types/react-native@~0.70.6":
   version "0.70.9"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.70.9.tgz#7d9d11960a4ab78c874e77af895f83d2817aac96"
   integrity sha512-0C6sIo13ztzM2llaWdTq0Vpscx3VdU0T8F45kEurWv3l5n+BHm/Mkr8Z+N29eXDYGhTvCz5y2jegB8JyiVa5kw==
@@ -12747,10 +12740,10 @@ react-native-svg-transformer@^1.0.0:
     "@svgr/plugin-svgo" "^6.1.2"
     path-dirname "^1.0.2"
 
-react-native-svg@13.4.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.4.0.tgz#82399ba0956c454144618aa581e2d748dd3f010a"
-  integrity sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag==
+react-native-svg@13.8.0:
+  version "13.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.8.0.tgz#b6a22cf77f8098f910490a13aeb160a37e182f97"
+  integrity sha512-G8Mx6W86da+vFimZBJvA93POw8yz0fgDS5biy6oIjMWVJVQSDzCyzwO/zY0yuZmCDhKSZzogl5m0wXXvW2OcTA==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
