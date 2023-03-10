@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StyleSheet, View, Text, TextInput } from "react-native"
+import {
+  StyleSheet, View, Text, TextInput,
+} from "react-native"
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 import Button from "../components/Button"
 import { colors } from "../theme"

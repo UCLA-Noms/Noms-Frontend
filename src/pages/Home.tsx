@@ -82,10 +82,9 @@ const Home = ({ navigation }) => {
               ) /* TODO: search every time query in searchbar is changed? */
             }}
             onSubmitEditing={
-              () =>
-                search(
-                  searchText,
-                ) /* TODO: search only when user submits search query? */
+              () => search(
+                searchText,
+              ) /* TODO: search only when user submits search query? */
             }
             value={searchText}
             placeholder="Search Bar"
@@ -98,20 +97,18 @@ const Home = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        {restaurants.map((rest) =>
-          rest.visible ? (
-            <RestaurantCard
-              restaurantName={rest.name}
-              closingTime={new Date()}
-              rating={2.3}
-              price={4}
-              distance={1.5}
-              liked={false}
-              navigation={navigation}
-              image="rListing4"
-            />
-          ) : null,
-        )}
+        {restaurants.map(rest => (rest.visible ? (
+          <RestaurantCard
+            restaurantName={rest.name}
+            closingTime={new Date()}
+            rating={2.3}
+            price={4}
+            distance={1.5}
+            liked={false}
+            navigation={navigation}
+            image="rListing4"
+          />
+        ) : null))}
       </ScrollView>
     </SafeAreaView>
   )

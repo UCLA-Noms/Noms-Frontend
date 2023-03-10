@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { getDefaultConfig } = require("@expo/metro-config")
+import { getDefaultConfig } from "@expo/metro-config"
 
 module.exports = (async () => {
   const {

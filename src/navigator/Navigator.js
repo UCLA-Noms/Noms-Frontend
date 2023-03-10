@@ -13,7 +13,7 @@ const Navigator = () => {
   const { user } = useAuthentication()
 
   useEffect(() => {
-    dispatch(authenticate({ loggedIn: false, checked: true }))
+    dispatch(authenticate({ loggedIn: true, checked: true }))
   }, [])
   console.log("[##] loggedIn", loggedIn)
 

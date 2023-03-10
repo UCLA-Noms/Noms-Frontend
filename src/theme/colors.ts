@@ -7,6 +7,7 @@ const colors = {
   gray: "#797777",
   lightBlue: "#38B6FF",
   white: "#ffffff",
+  money: "#abffc1",
 }
 
 export default colors

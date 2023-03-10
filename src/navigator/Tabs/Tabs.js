@@ -10,7 +10,11 @@ import {
   MeNavigator,
   ProfileSetupNavigator,
 } from "../Stacks"
-import { FunNavigator, RestuarantNavigator } from "../Stacks/Stacks"
+import {
+  FoodNavigator,
+  FunNavigator,
+  RestuarantNavigator,
+} from "../Stacks/Stacks"
 
 const Tab = createBottomTabNavigator()
 
@@ -24,6 +28,13 @@ const TabNavigator = props => (
           return (
             <Image
               source={images.home}
+              color={focused ? colors.lightPurple : colors.gray}
+            />
+          )
+        case "Food":
+          return (
+            <Image
+              source={images.food}
               color={focused ? colors.lightPurple : colors.gray}
             />
           )
