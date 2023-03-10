@@ -32,6 +32,7 @@ module.exports = {
     "global-require": "off",
     "no-console": "off",
     "no-shadow": "off",
+    "import/named": "off",
     "@typescript-eslint/no-shadow": [0, "error"],
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",

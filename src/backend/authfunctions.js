@@ -34,9 +34,18 @@ const login = async (idToken, accessToken) => {
 const logout = async () => {
   try {
     await signOut(auth)
+    console.log("logged out")
   } catch (err) {
     console.error(err)
   }
 }
+
+// const userExists = async (email) => {
+//   const result = await auth.fetchSignInMethodsForMail(email)
+//   if (result.length > 0) {
+//     return true
+//   }
+//   return false
+// }
 
 export { login, logout }

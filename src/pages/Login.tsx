@@ -13,6 +13,8 @@ import { authenticate } from "../slices/app.slice"
 import Button from "../components/Button"
 
 import { login, logout } from "../backend/authfunctions"
+import { auth } from "../backend/FirebaseConfig"
+import { fetchSignInMethodsForEmail } from "firebase/auth"
 
 const styles = StyleSheet.create({
   root: {
@@ -114,10 +116,16 @@ const Login = ({ navigation }) => {
 
   useEffect(() => {
     if (userInfo) {
-      navigation.navigate("Welcome", {
-        username: userInfo.name,
-        email: userInfo.email,
-      }) // temporarily pass username as prop
+      fetchSignInMethodsForEmail(auth, userInfo.email).then((result) => {
+        if (result.length === 0) {
+          navigation.navigate("Welcome", {
+            username: userInfo.name,
+            email: userInfo.email,
+          }) // temporarily pass username as prop
+        } else {
+          navigation.navigate("Home")
+        }
+      })
     }
   }, [userInfo])
 
@@ -133,17 +141,19 @@ const Login = ({ navigation }) => {
       {/* <Text style={styles.title}>
         {userInfo ? `Logged in as ${userInfo.name}` : "Logged out"}
       </Text> */}
-      <Button
-        title={!accessToken ? "Log in" : "Logout"}
-        color="black"
-        width={200}
-        height={50}
-        backgroundColor={colors.lightGrayPurple}
-        borderColor="black"
-        borderWidth={1}
-        borderRadius={20}
-        onPress={!accessToken ? signin : signout}
-      />
+      {!accessToken ? (
+        <Button
+          title="Log in"
+          color="black"
+          width={200}
+          height={50}
+          backgroundColor={colors.lightGrayPurple}
+          borderColor="black"
+          borderWidth={1}
+          borderRadius={20}
+          onPress={!accessToken ? signin : signout}
+        />
+      ) : null}
     </View>
   )
 }
